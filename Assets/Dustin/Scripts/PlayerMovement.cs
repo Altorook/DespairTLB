@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             targetSpeed = sprintSpeed;
             currentStamina -= staminaDrainRate * Time.deltaTime;
-            Debug.Log("Player started sprinting");
+          //  Debug.Log("Player started sprinting");
         }
         else if (isCrouching)
         {
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (!sprintAction.IsPressed())
         {
-            Debug.Log("Player stopped sprint");
+         //   Debug.Log("Player stopped sprint");
         }
 
         Vector3 move = new Vector3(input.x, 0, input.y);
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
                 playerCamera.transform.localPosition.z
                 );
 
-            Debug.Log(isCrouching ? "Player crouched." : "Player uncrouched");
+          //  Debug.Log(isCrouching ? "Player crouched." : "Player uncrouched");
         }
     }
 
