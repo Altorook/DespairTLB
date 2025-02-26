@@ -25,6 +25,9 @@ public class WeepingAngel : MonoBehaviour
     [SerializeField] float murderProbability;
     [SerializeField] Transform behindPlayerTransform;
     [SerializeField] Transform[] murderSpawnPoints;
+
+    [SerializeField] float maxDistanceBeforeNewPos = 3;
+    [SerializeField] float minDistanceBeforeNewPos = .5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +36,9 @@ public class WeepingAngel : MonoBehaviour
     void NewHideState()
     {
         timeToChange = Random.Range(minTimeToChange,maxTimeToChange);
+        stateReturnTimer = 0;
+        this.gameObject.GetComponent<Renderer>().enabled = false;
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         currentState = WeepingState.HideFromPlayer;
     }
     // Update is called once per frame
@@ -70,7 +76,7 @@ public class WeepingAngel : MonoBehaviour
             currentState = lastStateBeforeLookedAt;
         }else if(lastStateBeforeLookedAt == WeepingState.ScareState)
         {
-            currentState = WeepingState.HideFromPlayer;
+            NewHideState();
         }
     }
     private void LookedAt()
@@ -85,7 +91,17 @@ public class WeepingAngel : MonoBehaviour
     }
     private void Scare()
     {
-
+        if(Vector3.Distance(transform.position,playerPos.position) > maxDistanceBeforeNewPos || Vector3.Distance(transform.position, playerPos.position) < minDistanceBeforeNewPos)
+        {
+            ScarePosition();
+        }
+    }
+    private void ScarePosition()
+    {
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        this.gameObject.GetComponent<Renderer>().enabled = true;
+        transform.position = behindPlayerTransform.position;
+        currentState = WeepingState.ScareState;
     }
     private void HideFromPlayer()
     {
@@ -114,12 +130,13 @@ public class WeepingAngel : MonoBehaviour
                     }
                     
                 }
+                this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                this.gameObject.GetComponent<Renderer>().enabled = true;
                 transform.position = furthestSpawnPoint;
             }
             else
             {
-                transform.position = behindPlayerTransform.position;
-                currentState = WeepingState.ScareState;
+                ScarePosition();
             }
         }
     }
