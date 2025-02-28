@@ -199,80 +199,20 @@ PrefabInstance:
       objectReference: {fileID: 1958428190}
     - target: {fileID: 2062103097649282737, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_VersionIndex
-      value: 399
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 3072
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 405
       objectReference: {fileID: 0}
     - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 887904957}
     - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 887904957}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayerCanSee
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayerCannotSee
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WeepingAngel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WeepingAngel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2944845443051563699, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: EnemyNotLookedAt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5023132479204043750, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1958428190}
-    - target: {fileID: 5023132479204043750, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: m_CookingOptions
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023132479204043750, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 1028
-      objectReference: {fileID: 0}
     - target: {fileID: 6817791407257860590, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.17
@@ -316,6 +256,10 @@ PrefabInstance:
     - target: {fileID: 8319109712760614805, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_Name
       value: PlayerNathanChanges
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319109712760614805, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -477,6 +421,7 @@ GameObject:
   - component: {fileID: 839615810}
   - component: {fileID: 839615809}
   - component: {fileID: 839615808}
+  - component: {fileID: 839615811}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -587,6 +532,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &839615811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839615807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fcfb0b00c46d240b4657b1f5e313cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attempts: 0
 --- !u!1 &840002900
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &887904957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,14 +724,16 @@ MonoBehaviour:
   stateReturnTimer: 0
   timeToChange: 0
   maxTimeToChange: 7
-  minTimeToChange: 2
-  murderProbability: 1
+  minTimeToChange: 5
+  murderProbability: 0.2
   behindPlayerTransform: {fileID: 1382882750}
   murderSpawnPoints:
   - {fileID: 670369336}
   - {fileID: 107441823}
   - {fileID: 876446384}
   - {fileID: 139742603}
+  maxDistanceBeforeNewPos: 3
+  minDistanceBeforeNewPos: 0.5
 --- !u!195 &887904958
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3292,7 +3252,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -3463,7 +3423,7 @@ Mesh:
     m_Center: {x: -0.27157593, y: -42.623684, z: -0.82607603}
     m_Extent: {x: 113.121, y: 43.123684, z: 11.039032}
   m_MeshUsageFlags: 0
-  m_CookingOptions: -1
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   'm_MeshMetrics[0]': 16513.236
