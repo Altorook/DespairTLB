@@ -319,40 +319,51 @@ public class RotationPuzzle : MonoBehaviour
                 newGridElement.transform.parent = GridParent.transform;
             }
         }
-        for(int i = 0; i<TruePath.Count; i++)
+        for (int i = 0; i < puzzleArray.GetLength(0); i++)
+        {
+            for (int j = 0; j < puzzleArray.GetLength(1); j++)
+            {
+
+                inGameArray[i, j].GetComponent<RotPuzPiece>().cordOnArray = new Vector2(i, j);
+                inGameArray[i, j].GetComponent<RotPuzPiece>().arrayOfPuzzle = inGameArray;
+                
+                
+            }
+        }
+        for (int i = 0; i<TruePath.Count; i++)
         {
             if(i== 0)
             {
                 if(TruePath[i + 1].x == 1)
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("L");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
                     
                 }
                 else
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("Straight");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
                 }
             }
             else if(i == TruePath.Count-1)
             {
-                if (TruePath[i - 1].x <= TruePath[i].x)
+                if (TruePath[i - 1].x < TruePath[i].x)
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("Straight");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
                 }
                 else
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("L");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
                 }
             }
             else
             {
                 if (Mathf.Abs(TruePath[i-1].x - TruePath[i + 1].x) == 2|| Mathf.Abs(TruePath[i - 1].y - TruePath[i + 1].y) == 2)
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("Straight");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
                 }
                 else
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].transform.GetChild(0).GetComponent<TMP_Text>().SetText("L");
+                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
                 }
             }
            

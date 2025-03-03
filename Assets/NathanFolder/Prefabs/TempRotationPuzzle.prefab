@@ -282,7 +282,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d65a9407519fca47a78ae70e0bc0d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 4
+  cordOnArray: {x: 0, y: 0}
+  currentRotation: 0
   LeftConnection: 0
   RightConnection: 0
   UpConnection: 0
   DownConnection: 0
+  isConnectedToStart: 0
+  StraightProb: 3
+  LShapeProb: 4
+  TShapeProb: 2
+  CrossProb: 1
+  BlankProb: 1
+  ConvertToTMax: 6
+  ConvertToCrossMax: 10
+  pieceShapes:
+  - {fileID: 21300000, guid: 974fdb205b106e341af439a20a35e133, type: 3}
+  - {fileID: 21300000, guid: cbe6052c5e3dd98498856625d2912b7d, type: 3}
+  - {fileID: 21300000, guid: db0014c8d7be1e84da05468858524551, type: 3}
+  - {fileID: 21300000, guid: 387d725de3d1e5f40816088946bf0b5f, type: 3}
+  - {fileID: 21300000, guid: 3fa30119fecfcd8499f7bbe235ced6da, type: 3}
