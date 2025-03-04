@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RotationPuzzle : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class RotationPuzzle : MonoBehaviour
     [SerializeField] List<Vector2> TruePath = new List<Vector2>();
     [SerializeField] GameObject TilePrefab;
     [SerializeField] GameObject GridParent;
+
+    public UnityEvent PuzzleCompleted;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -326,8 +329,8 @@ public class RotationPuzzle : MonoBehaviour
 
                 inGameArray[i, j].GetComponent<RotPuzPiece>().cordOnArray = new Vector2(i, j);
                 inGameArray[i, j].GetComponent<RotPuzPiece>().arrayOfPuzzle = inGameArray;
-                
-                
+
+                inGameArray[i, j].GetComponent<RotPuzPiece>().rotpuzzleScript = this;
             }
         }
         for (int i = 0; i<TruePath.Count; i++)
@@ -368,5 +371,9 @@ public class RotationPuzzle : MonoBehaviour
             }
            
         }
+    }
+    public void TellPuzzleCompleted()
+    {
+        PuzzleCompleted.Invoke();
     }
 }

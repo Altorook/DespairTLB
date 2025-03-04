@@ -22,6 +22,7 @@ public class RotPuzPiece : MonoBehaviour
     public bool DownConnection;
 
     public bool isConnectedToStart = false;
+    public RotationPuzzle rotpuzzleScript;
     [SerializeField] int StraightProb;
     [SerializeField] int LShapeProb;
     [SerializeField] int TShapeProb;
@@ -170,7 +171,7 @@ public class RotPuzPiece : MonoBehaviour
 
         Unconnected();
         this.transform.rotation = Quaternion.Euler(0, 0, currentRotation);
-       
+      
     }
     public void RelayConnectionsGained()
     {
@@ -326,6 +327,11 @@ public class RotPuzPiece : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<Image>().color = Color.white;
+        }
+        if (cordOnArray == new Vector2(RotPuzArray.GetLength(0) - 1, RotPuzArray.GetLength(1)-1) && isConnectedToStart && RightConnection)
+        {
+            Debug.Log("Completed");
+            rotpuzzleScript.TellPuzzleCompleted();
         }
     }
 }
