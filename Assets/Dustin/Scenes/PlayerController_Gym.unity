@@ -1358,6 +1358,7 @@ GameObject:
   - component: {fileID: 863666267}
   - component: {fileID: 863666271}
   - component: {fileID: 863666272}
+  - component: {fileID: 863666273}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1509,6 +1510,22 @@ MonoBehaviour:
   staminaDrainRate: 2
   crouchHeight: 1.5
   lookSensitivity: 0.3
+--- !u!114 &863666273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863666265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f36f317546fd94d95fd6bae4115b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  castDistance: 3
 --- !u!1 &882797331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,7 +2802,7 @@ GameObject:
   - component: {fileID: 1409761125}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3301,8 +3318,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1669546654}
   - component: {fileID: 1669546655}
-  m_Layer: 0
-  m_Name: DesktopInteractionManager
+  - component: {fileID: 1669546656}
+  - component: {fileID: 1669546657}
+  m_Layer: 9
+  m_Name: ComputerInteract
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3317,11 +3336,11 @@ Transform:
   m_GameObject: {fileID: 1669546653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.960261, y: -4.8527584, z: 44.132442}
+  m_LocalPosition: {x: 0, y: 1.62, z: 3.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1904046081}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1669546655
 MonoBehaviour:
@@ -3340,6 +3359,35 @@ MonoBehaviour:
   computerCamera: {fileID: 1374433811}
   player: {fileID: 863666265}
   movementScriptName: PlayerMovement
+--- !u!65 &1669546656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669546653}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1669546657
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669546653}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1688641279
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,7 +4041,6 @@ Transform:
   m_Children:
   - {fileID: 729722948}
   - {fileID: 382489361}
-  - {fileID: 1669546654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1940615605
@@ -4551,3 +4598,4 @@ SceneRoots:
   - {fileID: 1656049818}
   - {fileID: 1596799601}
   - {fileID: 1374433812}
+  - {fileID: 1669546654}

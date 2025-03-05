@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DesktopInteraction : MonoBehaviour
+public class DesktopInteraction : MonoBehaviour, IInteractable
 {
     [Header("References")]
     public GameObject desktopCanvas;
@@ -21,30 +21,31 @@ public class DesktopInteraction : MonoBehaviour
         }
     }
 
+    public void InteractedWith()
+    {
+        if (!isUsingComputer)
+        {
+            isUsingComputer = true;
+            mainCamera.gameObject.SetActive(false);
+            computerCamera.gameObject.SetActive(true);
+            desktopCanvas.SetActive(true);
+
+            if (movementScript != null)
+            {
+                //movementScript.enabled = false; // Disables movement
+                player.SendMessage("ToggleMenuState");
+            }
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !isUsingComputer)
-        {
-            UseComputer();
-        }
-        else if (Input.GetKeyDown(KeyCode.Q) && isUsingComputer)
+        if (Input.GetKeyDown(KeyCode.Escape) && isUsingComputer)
         {
             ExitComputer();
         }
-    }
-
-    private void UseComputer()
-    {
-        isUsingComputer = true;
-        mainCamera.gameObject.SetActive(false);
-        computerCamera.gameObject.SetActive(true);
-        desktopCanvas.SetActive(true);
-
-        if (movementScript != null)
-            movementScript.enabled = false; // Disables movement
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     private void ExitComputer()
@@ -54,7 +55,10 @@ public class DesktopInteraction : MonoBehaviour
         computerCamera.gameObject.SetActive(false);
 
         if (movementScript != null)
-            movementScript.enabled = true; // Enables movement 
+        {
+            //movementScript.enabled = true; // Enables movement 
+            player.SendMessage("ToggleMenuState");
+        }  
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
