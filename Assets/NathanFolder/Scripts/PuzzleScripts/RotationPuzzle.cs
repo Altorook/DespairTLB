@@ -18,6 +18,7 @@ public class RotationPuzzle : MonoBehaviour
     [SerializeField] GameObject TilePrefab;
     [SerializeField] GameObject GridParent;
 
+    public bool isCompleted;
     public UnityEvent PuzzleCompleted;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,10 +31,6 @@ public class RotationPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            GeneratePuzzleArray();
-        }
     }
     void ClearArray()
     {
@@ -313,6 +310,10 @@ public class RotationPuzzle : MonoBehaviour
         {
             GeneratePuzzleArray();
         }
+        else
+        {
+
+        
         for (int i = 0; i < puzzleArray.GetLength(0); i++)
         {
             for (int j = 0; j < puzzleArray.GetLength(1); j++)
@@ -333,47 +334,51 @@ public class RotationPuzzle : MonoBehaviour
                 inGameArray[i, j].GetComponent<RotPuzPiece>().rotpuzzleScript = this;
             }
         }
-        for (int i = 0; i<TruePath.Count; i++)
-        {
-            if(i== 0)
+            for (int i = 0; i < TruePath.Count; i++)
             {
-                if(TruePath[i + 1].x == 1)
+                if (i == 0)
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
-                    
+                    if (TruePath[i + 1].x == 1)
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
+
+                    }
+                    else
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
+                    }
+                }
+                else if (i == TruePath.Count - 1)
+                {
+                    if (TruePath[i - 1].x < TruePath[i].x)
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
+                    }
+                    else
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
+                    }
                 }
                 else
                 {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
+                    if (Mathf.Abs(TruePath[i - 1].x - TruePath[i + 1].x) == 2 || Mathf.Abs(TruePath[i - 1].y - TruePath[i + 1].y) == 2)
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
+                    }
+                    else
+                    {
+                        inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
+                    }
                 }
             }
-            else if(i == TruePath.Count-1)
-            {
-                if (TruePath[i - 1].x < TruePath[i].x)
-                {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
-                }
-                else
-                {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
-                }
-            }
-            else
-            {
-                if (Mathf.Abs(TruePath[i-1].x - TruePath[i + 1].x) == 2|| Mathf.Abs(TruePath[i - 1].y - TruePath[i + 1].y) == 2)
-                {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.Straight;
-                }
-                else
-                {
-                    inGameArray[((int)TruePath[i].x), (int)TruePath[i].y].GetComponent<RotPuzPiece>().type = RotPuzPiece.PieceType.LShape;
-                }
-            }
-           
         }
     }
     public void TellPuzzleCompleted()
     {
-        PuzzleCompleted.Invoke();
+        if(isCompleted == false)
+        {
+            PuzzleCompleted.Invoke();
+            isCompleted = true;
+        }
     }
 }

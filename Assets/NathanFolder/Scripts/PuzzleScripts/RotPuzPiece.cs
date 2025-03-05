@@ -130,48 +130,51 @@ public class RotPuzPiece : MonoBehaviour
     }
     public void Rotate()
     {
-  
-        currentRotation += 90;
-        if(currentRotation >= 360)
+       if(rotpuzzleScript.isCompleted == false)
         {
-            currentRotation = 0;
-        }
-        bool tempRightConnection = false;
-        bool tempLeftConnection = false;
-        bool tempUpConnection = false;
-        bool tempDownConnection = false;
+            currentRotation += 90;
+            if (currentRotation >= 360)
+            {
+                currentRotation = 0;
+            }
+            bool tempRightConnection = false;
+            bool tempLeftConnection = false;
+            bool tempUpConnection = false;
+            bool tempDownConnection = false;
 
-        if (LeftConnection)
-        {
-            LeftConnection = false;
-            tempDownConnection = true;
-        }
-        if (DownConnection)
-        {
-            DownConnection = false;
-            tempRightConnection = true;
-        }
-        if (RightConnection)
-        {
-            RightConnection = false;
-            tempUpConnection = true;
-        }
-        if (UpConnection)
-        {
-            UpConnection = false;
-            tempLeftConnection = true;
-        }
-        
-        LeftConnection = tempLeftConnection;
-        DownConnection = tempDownConnection;
-        RightConnection = tempRightConnection;
-        UpConnection = tempUpConnection;
-        UpdateConnections();
+            if (LeftConnection)
+            {
+                LeftConnection = false;
+                tempDownConnection = true;
+            }
+            if (DownConnection)
+            {
+                DownConnection = false;
+                tempRightConnection = true;
+            }
+            if (RightConnection)
+            {
+                RightConnection = false;
+                tempUpConnection = true;
+            }
+            if (UpConnection)
+            {
+                UpConnection = false;
+                tempLeftConnection = true;
+            }
+
+            LeftConnection = tempLeftConnection;
+            DownConnection = tempDownConnection;
+            RightConnection = tempRightConnection;
+            UpConnection = tempUpConnection;
+            UpdateConnections();
 
 
-        Unconnected();
-        this.transform.rotation = Quaternion.Euler(0, 0, currentRotation);
-      
+            Unconnected();
+            this.transform.rotation = Quaternion.Euler(0, 0, currentRotation);
+
+        }
+
     }
     public void RelayConnectionsGained()
     {

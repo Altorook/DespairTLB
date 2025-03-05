@@ -18,11 +18,22 @@ public class WeepingAngel : MonoBehaviour
     //temp var
     [SerializeField] Transform playerPos;
     float speed = 3.5f;
+
+    [SerializeField]
+    float killDistance;
     [SerializeField] float stateReturnTimer;
     [SerializeField] float timeToChange;
     [SerializeField] float maxTimeToChange;
     [SerializeField] float minTimeToChange;
+
+    [SerializeField] float resetMaxTime;
+    [SerializeField] float resetMinTime;
+    [SerializeField] float resetProb;
+
+    [SerializeField] float timeDecreaseFromScare;
     [SerializeField] float murderProbability;
+    [SerializeField] float increasePerScareMurderProb;
+
     [SerializeField] Transform behindPlayerTransform;
     [SerializeField] Transform[] murderSpawnPoints;
 
@@ -32,6 +43,9 @@ public class WeepingAngel : MonoBehaviour
     void Start()
     {
         NewHideState();
+        resetMaxTime = maxTimeToChange;
+        resetMinTime = minTimeToChange;
+        resetProb  = murderProbability;
     }
     void NewHideState()
     {
@@ -66,6 +80,14 @@ public class WeepingAngel : MonoBehaviour
     }
     public void PlayerCanSee()
     {
+        
+        if(currentState == WeepingState.ScareState)
+        {
+            //play sound for a jump here 
+        }
+        //go to hide animation and hold position covering face here
+
+
         lastStateBeforeLookedAt = currentState;
         currentState = WeepingState.LookedAt;
     }
@@ -86,11 +108,19 @@ public class WeepingAngel : MonoBehaviour
     }
     private void Murder()
     {
+
+        //play stone scraping sound here
+
+
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
+        if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
+            Debug.Log("UrDEad");
+        }
     }
     private void Scare()
     {
+        //maybe play breathing SFX here. or something to slightly hint you are not alone
         if(Vector3.Distance(transform.position,playerPos.position) > maxDistanceBeforeNewPos || Vector3.Distance(transform.position, playerPos.position) < minDistanceBeforeNewPos)
         {
             ScarePosition();
@@ -130,6 +160,9 @@ public class WeepingAngel : MonoBehaviour
                     }
                     
                 }
+                murderProbability = resetProb;
+                maxTimeToChange = resetMaxTime;
+                minTimeToChange = resetMinTime;
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
                 this.gameObject.GetComponent<Renderer>().enabled = true;
                 transform.position = furthestSpawnPoint;
@@ -137,6 +170,9 @@ public class WeepingAngel : MonoBehaviour
             else
             {
                 ScarePosition();
+                murderProbability += increasePerScareMurderProb;
+                minTimeToChange -= timeDecreaseFromScare;
+                maxTimeToChange -= timeDecreaseFromScare;
             }
         }
     }
