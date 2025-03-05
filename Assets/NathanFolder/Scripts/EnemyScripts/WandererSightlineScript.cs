@@ -1,60 +1,64 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering;
 
-public class PlayerLineOfSight : MonoBehaviour
+public class WandererSightlineScript : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     Transform ViewOrigin;
     [SerializeField]
     LayerMask layerMask;
-    public UnityEvent EnemyLookedAt;
-    public UnityEvent EnemyNotLookedAt;
-    private bool isEnemyLookedAt = false;
+    public UnityEvent PlayerLookedAt;
+    public UnityEvent PlayerNotLookedAt;
+    [SerializeField] WandererEnemy WandererEnemy;
+    private bool isPlayerLookedAt = false;
     private bool didLookStateChange = false;
+    [SerializeField] float timeToLoseEnemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-      //  Debug.DrawRay();
+        
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if(isEnemyLookedAt != didLookStateChange)
+        if (isPlayerLookedAt != didLookStateChange)
         {
-            if (isEnemyLookedAt)
+            if (isPlayerLookedAt)
             {
-                EnemyLookedAt.Invoke();
+                PlayerLookedAt.Invoke();
             }
             else
             {
-                EnemyNotLookedAt.Invoke();
+                PlayerNotLookedAt.Invoke();
             }
-            didLookStateChange = isEnemyLookedAt;
+            didLookStateChange = isPlayerLookedAt;
         }
     }
     public void OnTriggerStay(Collider other)
     {
-       // Debug.Log("Looking At " + other.gameObject.name);
+        // Debug.Log("Looking At " + other.gameObject.name);
         RaycastHit hit;
         Debug.DrawRay(ViewOrigin.position, other.transform.position - ViewOrigin.position);
         if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
         {
-            isEnemyLookedAt = false;
-         //   Debug.Log(hit.transform.gameObject.name);
+            isPlayerLookedAt = false;
+            //   Debug.Log(hit.transform.gameObject.name);
             Debug.Log("CanMove");
         }
         else
         {
-            isEnemyLookedAt = true;
+            isPlayerLookedAt = true;
+            WandererEnemy.timeOutOfSightBeforePatrol = timeToLoseEnemy;
+            WandererEnemy.currentState = WandererEnemy.WandererState.Chase;
         }
     }
     public void OnTriggerExit(Collider other)
     {
-        isEnemyLookedAt = false;
+        isPlayerLookedAt = false;
     }
 }

@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private float cameraStandingHeight;
     private float cameraCrouchingHeight;
 
+    private bool isMenuOpen;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -67,10 +68,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
-        HandleStamina();
-        HandleLook();
-        HandleCursor();
+        if(isMenuOpen == false)
+        {
+            HandleMovement();
+            HandleStamina();
+            HandleLook();
+            HandleCursor();
+        }
+      
     }
 
     private void HandleMovement()
@@ -144,5 +149,9 @@ public class PlayerMovement : MonoBehaviour
             Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = !Cursor.visible;
         }
+    }
+    public void ToggleMenuState()
+    {
+        isMenuOpen = !isMenuOpen;
     }
 }
