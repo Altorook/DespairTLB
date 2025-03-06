@@ -51,7 +51,7 @@ public class WeepingAngel : MonoBehaviour
     {
         timeToChange = Random.Range(minTimeToChange,maxTimeToChange);
         stateReturnTimer = 0;
-        this.gameObject.GetComponent<Renderer>().enabled = false;
+        this.gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         currentState = WeepingState.HideFromPlayer;
     }
@@ -129,7 +129,7 @@ public class WeepingAngel : MonoBehaviour
     private void ScarePosition()
     {
         this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-        this.gameObject.GetComponent<Renderer>().enabled = true;
+        this.gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = true;
         transform.position = behindPlayerTransform.position;
         currentState = WeepingState.ScareState;
     }
@@ -164,7 +164,7 @@ public class WeepingAngel : MonoBehaviour
                 maxTimeToChange = resetMaxTime;
                 minTimeToChange = resetMinTime;
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-                this.gameObject.GetComponent<Renderer>().enabled = true;
+                this.gameObject.transform.GetChild(0).GetComponent<Renderer>().enabled = true;
                 transform.position = furthestSpawnPoint;
             }
             else
