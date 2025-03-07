@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class WeepingAngel : MonoBehaviour
 {
@@ -113,6 +114,16 @@ public class WeepingAngel : MonoBehaviour
         weepAi.speed = 0;
         _anim.SetBool("IsRunning", false);
     }
+    IEnumerator DeathProcess()
+    {
+        //play scream
+        yield return new WaitForSeconds(1.4f);
+        //play silly scream
+        yield return new WaitForSeconds(1.19f);
+        //neck snap
+        yield return new WaitForSeconds(0.45f);
+        SceneManager.LoadScene("Kyle Scene");
+    }
     private void Murder()
     {
 
@@ -124,18 +135,22 @@ public class WeepingAngel : MonoBehaviour
             maxTimeToChange = resetMaxTime;
             minTimeToChange = resetMinTime;
             currentState = WeepingState.HideFromPlayer;
+            timeInMurder = 0;
+            timeToChange = 0;
         }
 
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
         if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
             Debug.Log("UrDEad");
+            StartCoroutine(DeathProcess());
         }
 
         _anim.SetBool("IsRunning", true);
     }
     private void Scare()
     {
+        this.transform.LookAt(playerPos.position);
         //maybe play breathing SFX here. or something to slightly hint you are not alone
         if(Vector3.Distance(transform.position,playerPos.position) > maxDistanceBeforeNewPos || Vector3.Distance(transform.position, playerPos.position) < minDistanceBeforeNewPos)
         {
