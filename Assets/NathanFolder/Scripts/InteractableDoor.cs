@@ -24,6 +24,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
             isOpening = true;
             Debug.Log("Open?");
             OpenDoor();
+            AudioManager.PlaySound(4);
         }
     }
     public void OpenDoor()
