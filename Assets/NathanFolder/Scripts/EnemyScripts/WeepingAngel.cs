@@ -40,6 +40,9 @@ public class WeepingAngel : MonoBehaviour
 
     [SerializeField] float maxDistanceBeforeNewPos = 3;
     [SerializeField] float minDistanceBeforeNewPos = .5f;
+
+    [SerializeField] float timeInMurder;
+    [SerializeField] float timeBeforeStopMurder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -114,7 +117,14 @@ public class WeepingAngel : MonoBehaviour
     {
 
         //play stone scraping sound here
-
+        timeInMurder += Time.deltaTime;
+        if(timeInMurder > timeBeforeStopMurder)
+        {
+            murderProbability = resetProb;
+            maxTimeToChange = resetMaxTime;
+            minTimeToChange = resetMinTime;
+            currentState = WeepingState.HideFromPlayer;
+        }
 
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
