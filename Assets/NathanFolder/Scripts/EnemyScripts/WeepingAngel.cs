@@ -134,9 +134,11 @@ public class WeepingAngel : MonoBehaviour
             murderProbability = resetProb;
             maxTimeToChange = resetMaxTime;
             minTimeToChange = resetMinTime;
+            timeToChange = 0;
+            stateReturnTimer = 0;
             currentState = WeepingState.HideFromPlayer;
             timeInMurder = 0;
-            timeToChange = 0;
+            
         }
 
         weepAi.speed = speed;
