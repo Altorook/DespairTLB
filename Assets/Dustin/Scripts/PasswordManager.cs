@@ -13,6 +13,7 @@ public class PasswordManager : MonoBehaviour
     [Header("References")]
     public TMP_Text[] hintDisplays; // Assign this in the inspector for clue locations
 
+    [SerializeField] SOPassword soPassword;
     public string CorrectPassowrd { get; private set; }
 
     private void Start()
@@ -29,8 +30,10 @@ public class PasswordManager : MonoBehaviour
         CorrectPassowrd = middle + year + pet;
         Debug.Log("Generated Password: " + CorrectPassowrd); // Just to ensure this is working easily
 
-        hintDisplays[0].text = middle;
-        hintDisplays[1].text = year;
+      //  hintDisplays[0].text = middle;
+      soPassword.middleName = middle;
+        soPassword.birthYear = year;
+        //hintDisplays[1].text = year;
         hintDisplays[2].text = pet;
     }
 }
