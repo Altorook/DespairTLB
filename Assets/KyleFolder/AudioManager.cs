@@ -3,6 +3,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField]
+    private AudioClip[] audioList;
+    [SerializeField]
     private AudioSource SFXSource;
     [SerializeField]
     private AudioSource MusicSource;
@@ -18,8 +20,8 @@ public class AudioManager : MonoBehaviour
         Instance = this;
     }
 
-    public static void PlaySound()
+    public static void PlaySound(int sound)
     {
-        Instance.SFXSource.Play();
+        Instance.SFXSource.PlayOneShot(Instance.audioList[sound]);
     }
 }
