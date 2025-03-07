@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-4483646654211634960
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect5_{-4483646654211634960}
+  m_AudioClip: {fileID: 8300000, guid: 352f70c59fa9ffe47aa82012b8cbb8ea, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3144266672660771102
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect6_{3144266672660771102}
+  m_AudioClip: {fileID: 8300000, guid: d4f49cbd60a39434992f9a2fc3ddcddf, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4107270272286042046
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect4_{4107270272286042046}
+  m_AudioClip: {fileID: 8300000, guid: dd1261d4714bd534781d267cd68cc9cb, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FootSteps
+  m_Volume: -15.8
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 8103798153130181807}
+  - {fileID: 8339557902274310463}
+  - {fileID: 7577428153872419395}
+  - {fileID: 4107270272286042046}
+  - {fileID: -4483646654211634960}
+  - {fileID: 3144266672660771102}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7577428153872419395
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect3_{7577428153872419395}
+  m_AudioClip: {fileID: 8300000, guid: ecef300a32607fe4da417ec9d9036e1f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8103798153130181807
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect1_{8103798153130181807}
+  m_AudioClip: {fileID: 8300000, guid: e95b73074792cf64a8c453002539b201, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8339557902274310463
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DespairFootStep_SoundEffect2_{8339557902274310463}
+  m_AudioClip: {fileID: 8300000, guid: c0f8cedf6191c834e826144deff94dd3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
