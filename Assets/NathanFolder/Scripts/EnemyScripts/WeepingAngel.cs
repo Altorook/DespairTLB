@@ -134,7 +134,7 @@ public class WeepingAngel : MonoBehaviour
             murderProbability = resetProb;
             maxTimeToChange = resetMaxTime;
             minTimeToChange = resetMinTime;
-            timeToChange = 0;
+            NewHideState();
             stateReturnTimer = 0;
             currentState = WeepingState.HideFromPlayer;
             timeInMurder = 0;
@@ -145,6 +145,7 @@ public class WeepingAngel : MonoBehaviour
         weepAi.destination = playerPos.position;
         if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
             Debug.Log("UrDEad");
+            NewHideState();
             StartCoroutine(DeathProcess());
         }
 
