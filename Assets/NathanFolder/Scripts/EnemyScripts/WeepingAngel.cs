@@ -14,6 +14,7 @@ public class WeepingAngel : MonoBehaviour
     public WeepingState currentState = 0;
     private WeepingState lastStateBeforeLookedAt;
     private float freezeMult = 1;
+    private Animator _anim;
     [SerializeField] NavMeshAgent weepAi;
     //temp var
     [SerializeField] Transform playerPos;
@@ -46,6 +47,7 @@ public class WeepingAngel : MonoBehaviour
         resetMaxTime = maxTimeToChange;
         resetMinTime = minTimeToChange;
         resetProb  = murderProbability;
+        _anim = GetComponentInChildren<Animator>();
     }
     void NewHideState()
     {
@@ -86,6 +88,7 @@ public class WeepingAngel : MonoBehaviour
             //play sound for a jump here 
         }
         //go to hide animation and hold position covering face here
+        _anim.SetBool("IsRunning", false);
 
 
         lastStateBeforeLookedAt = currentState;
@@ -105,6 +108,7 @@ public class WeepingAngel : MonoBehaviour
     {
         freezeMult = 0;
         weepAi.speed = 0;
+        _anim.SetBool("IsRunning", false);
     }
     private void Murder()
     {
@@ -117,6 +121,8 @@ public class WeepingAngel : MonoBehaviour
         if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
             Debug.Log("UrDEad");
         }
+
+        _anim.SetBool("IsRunning", true);
     }
     private void Scare()
     {
