@@ -1344,6 +1344,7 @@ MonoBehaviour:
   - John
   - Dinglenuts
   - Shmeat
+  - Pear
   birthYears:
   - 1970
   - 1969
@@ -1367,6 +1368,10 @@ MonoBehaviour:
   - Luna
   - Oliver
   - Raven
+  - Copper
+  - Chanakan
+  - Enzo
+  - Nattanun
   hintDisplays:
   - {fileID: 469209601}
   - {fileID: 469209601}
@@ -22782,7 +22787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774551399669823425, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_SpotAngle
-      value: 72.28123
+      value: 90.044586
       objectReference: {fileID: 0}
     - target: {fileID: 1774551399669823425, guid: 4e3a2c5a9323f00499eb90e81461e459, type: 3}
       propertyPath: m_InnerSpotAngle

@@ -23,7 +23,11 @@ public class CardScript : MonoBehaviour, IInteractable
             cardCanvas.SetActive(true);
             isOpen = true;
             int age = soPassword.yearOfGame - int.Parse(soPassword.birthYear);
-            if (age % 10 == 1)
+            if(age < 20)
+            {
+                text.SetText("Happy " + age + "th Birthday");
+            }
+            else if (age % 10 == 1)
             {
                 text.SetText("Happy " + age + "st Birthday");
             }
