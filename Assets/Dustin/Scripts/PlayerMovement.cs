@@ -106,8 +106,9 @@ public class PlayerMovement : MonoBehaviour
         if (crouchAction.WasPressedThisFrame())
         {
             isCrouching = !isCrouching;
+            float crouchOffset = ((-crouchHeight) / 2);
             controller.height = isCrouching ? crouchHeight : originalHeight;
-
+            controller.center = isCrouching ? new Vector3(0,crouchOffset,0) : new Vector3(0,0,0);
             // Set absolute camera height
             playerCamera.transform.localPosition = new Vector3(
                 playerCamera.transform.localPosition.x,

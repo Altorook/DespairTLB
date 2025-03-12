@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class HunterAI : MonoBehaviour
 {
@@ -32,13 +33,17 @@ public class HunterAI : MonoBehaviour
     
     [SerializeField] float minTimeBeforeHunt;
     [SerializeField] float maxTimeBeforeHunt;
+
+
+
+    [SerializeField] float huntDuration;
+    [SerializeField] float timeInHunt;
     [SerializeField] float percentReductionToHuntMinMax;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = HunterState.Idle;
-        StartCoroutine(RandomIdleDuration());
+        EnterIdle();
         timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
         timeNotHunting = 0;
     }
@@ -55,20 +60,30 @@ public class HunterAI : MonoBehaviour
         if (Vector3.Distance(this.transform.position, currentPatrolPosition.position) <= distanceToSwitchToIdle)
         {
             isOnWayToPatrolPoint = false;
-            currentState = HunterState.Idle;
-            StartCoroutine(RandomIdleDuration());
+            EnterIdle();
         }
     }
     void Chase()
     {
         agent.speed = chaseSpeed;
         agent.destination = PlayerPosition.position;
-
+        timeInHunt += Time.deltaTime;
+        if(timeInHunt >= huntDuration)
+        {
+            
+            timeInHunt = 0;
+            EnterIdle();
+        }
         if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance)
         {
             //play kill animation
             Debug.Log("UrDEad");
         }
+    }
+    public void EnterIdle()
+    {
+        currentState = HunterState.Idle;
+        StartCoroutine(RandomIdleDuration());
     }
     IEnumerator RandomIdleDuration()
     {

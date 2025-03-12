@@ -552,7 +552,7 @@ Mesh:
     m_Center: {x: -0.27157593, y: -42.623684, z: -0.82607603}
     m_Extent: {x: 113.121, y: 43.123684, z: 11.039032}
   m_MeshUsageFlags: 0
-  m_CookingOptions: -1
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   'm_MeshMetrics[0]': 16513.236
@@ -10517,6 +10517,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 4915932553598883238, guid: 5b8e30d654ee1b14192a24cbba1cf630, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7580104700933600685, guid: 5b8e30d654ee1b14192a24cbba1cf630, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -10841,6 +10845,8 @@ MonoBehaviour:
   timeTillHunt: 0
   minTimeBeforeHunt: 30
   maxTimeBeforeHunt: 20
+  huntDuration: 30
+  timeInHunt: 0
   percentReductionToHuntMinMax: 0.9
 --- !u!4 &1382882750 stripped
 Transform:
@@ -11534,7 +11540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 475199066588536386, guid: 84f81cacee26f914484a33f3a7ca779e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3646974354451037437, guid: 84f81cacee26f914484a33f3a7ca779e, type: 3}
       propertyPath: playerPos
@@ -11544,6 +11550,10 @@ PrefabInstance:
       propertyPath: behindPlayerTransform
       value: 
       objectReference: {fileID: 1382882750}
+    - target: {fileID: 3646974354451037437, guid: 84f81cacee26f914484a33f3a7ca779e, type: 3}
+      propertyPath: murderSpawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3646974354451037437, guid: 84f81cacee26f914484a33f3a7ca779e, type: 3}
       propertyPath: 'murderSpawnPoints.Array.data[0]'
       value: 
@@ -11687,7 +11697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4915932553598883238, guid: 5b8e30d654ee1b14192a24cbba1cf630, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580104700933600685, guid: 5b8e30d654ee1b14192a24cbba1cf630, type: 3}
       propertyPath: m_Mesh
