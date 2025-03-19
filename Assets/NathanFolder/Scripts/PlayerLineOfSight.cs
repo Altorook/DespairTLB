@@ -8,6 +8,7 @@ public class PlayerLineOfSight : MonoBehaviour
     Transform ViewOrigin;
     [SerializeField]
     LayerMask layerMask;
+    [SerializeField] SOSanity soSanity;
     public UnityEvent EnemyLookedAt;
     public UnityEvent EnemyNotLookedAt;
     private bool isEnemyLookedAt = false;
@@ -43,7 +44,10 @@ public class PlayerLineOfSight : MonoBehaviour
        // Debug.Log("Looking At " + other.gameObject.name);
         RaycastHit hit;
         Debug.DrawRay(ViewOrigin.position, other.transform.position - ViewOrigin.position);
-
+        if(other.gameObject.tag == "Enemy")
+        {
+            soSanity.isLookingAtEnemy = true;
+        }
         if(other.gameObject.name == "WeepingAngel")
         {
             if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
@@ -62,6 +66,10 @@ public class PlayerLineOfSight : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "Enemy")
+        {
+            soSanity.isLookingAtEnemy = false;
+        }
         if (other.gameObject.name == "WeepingAngel")
         {
             isEnemyLookedAt = false;
