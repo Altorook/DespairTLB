@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -4396642182433536433, guid: 99c0c8decd966b34fbce16d29603f970, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4dab667f16c8e4b4d95b203af6b9d1eb, type: 2}
+      objectReference: {fileID: 2100000, guid: 6eafac9fd46f3415ab2f88dacc2b8329, type: 2}
     - target: {fileID: 919132149155446097, guid: 99c0c8decd966b34fbce16d29603f970, type: 3}
       propertyPath: m_Name
       value: Wander

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e9751919bdaaee4d807aa68e9088d63
+guid: 117cfd809e0654f2e9098a8085c513cb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,18 +31,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wander_Walking
+      name: Gramophone_Scream
       takeName: rig|rigAction
       internalID: 3374748389425109202
       firstFrame: 0
-      lastFrame: 1552
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

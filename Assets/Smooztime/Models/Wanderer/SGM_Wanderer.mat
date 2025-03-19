@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6341865146097404873
+--- !u!114 &-3045373038637074020
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SGM_Wander
-  m_Shader: {fileID: -6465566751694194690, guid: ee140748940094849aa3815235739bde, type: 3}
+  m_Name: SGM_Wanderer
+  m_Shader: {fileID: -6465566751694194690, guid: 4028c57f69b9f40efb45e7ea16e2b350, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,15 +37,15 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_6554bc0f60aa41b3b4d7e5bab7b7245b_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 7473b5967cdd412498caa417a86b3fb8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9000b8a5dab84316b60479a139966c8a_Texture_1_Texture2D:
+    - _Base_Color:
         m_Texture: {fileID: 2800000, guid: e4fa7d3e890b3a342b0728f02da3120f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_b9ea3298d19f45328c0e70e4d743b3a3_Texture_1_Texture2D:
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 7473b5967cdd412498caa417a86b3fb8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBR:
         m_Texture: {fileID: 2800000, guid: 553fc9d01888f3b44a5f1f3b1538670d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,10 +63,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metallic: 0
+    - _AO_Value: 1
+    - _Height_Value: 0.287
+    - _Metallic_Value: 0
+    - _Pixelated_Amount: 1000
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness: 0
+    - _Roughness_Value: 0
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

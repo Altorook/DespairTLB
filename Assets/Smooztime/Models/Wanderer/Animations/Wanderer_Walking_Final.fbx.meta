@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f9ab4ceee66f11d409ba35755c13a96c
+guid: 9e9751919bdaaee4d807aa68e9088d63
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,18 +31,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wander_Attack
+      name: Wanderer_Walking
       takeName: rig|rigAction
       internalID: 3374748389425109202
       firstFrame: 0
-      lastFrame: 61
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

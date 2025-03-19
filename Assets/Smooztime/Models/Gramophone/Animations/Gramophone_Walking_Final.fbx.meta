@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e244c9ce4ef393647a7fabccac3a8620
+guid: 8b17c452e09a14f63b546a0fe117a378
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wander_Idle
+      name: Gramophone_Walking
       takeName: rig|rigAction
       internalID: 3374748389425109202
       firstFrame: 0
-      lastFrame: 210
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
