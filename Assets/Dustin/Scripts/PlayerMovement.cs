@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private float cameraCrouchingHeight;
 
     private bool isMenuOpen;
+    [SerializeField] float downVel;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -101,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = new Vector3(input.x, 0, input.y);
         if (move.sqrMagnitude > 1) move.Normalize();
 
-        controller.Move((transform.right * move.x + transform.forward * move.z) * targetSpeed * Time.deltaTime);
+        controller.Move((transform.right * move.x + transform.forward * move.z + transform.up * -downVel) * targetSpeed * Time.deltaTime);
 
         if (crouchAction.WasPressedThisFrame())
         {
