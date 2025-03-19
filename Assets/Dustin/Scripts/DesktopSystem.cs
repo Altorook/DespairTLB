@@ -49,6 +49,7 @@ public class DesktopSystem : MonoBehaviour
         {
             accessMessageText.text = "Access Granted. Door Unlocked.";
             // Add door logic here later
+            AudioManager.PlaySound(5);
             PasswordCorrect.Invoke();
         }
         else
