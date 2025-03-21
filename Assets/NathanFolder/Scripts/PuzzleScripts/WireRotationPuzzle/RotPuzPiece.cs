@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,9 @@ public class RotPuzPiece : MonoBehaviour
     [SerializeField] int ConvertToTMax;
     [SerializeField] int ConvertToCrossMax;
     [SerializeField] Sprite[] pieceShapes = new Sprite[5];
+    [SerializeField] Sprite[] pieceShapesPowered = new Sprite[5];
     Sprite currentTexture;
+    Sprite currentPoweredTexture;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -83,18 +86,21 @@ public class RotPuzPiece : MonoBehaviour
         if(type == PieceType.Straight)
         {
             currentTexture = pieceShapes[0];
+            currentPoweredTexture = pieceShapesPowered[0];
             LeftConnection = true;
             RightConnection = true;
         }
         else if(type == PieceType.LShape)
         {
             currentTexture = pieceShapes[1];
+            currentPoweredTexture = pieceShapesPowered[1];
             UpConnection = true;
             RightConnection = true;
         }
         else if(type == PieceType.TShape)
         {
             currentTexture = pieceShapes[2];
+            currentPoweredTexture = pieceShapesPowered[2];
             LeftConnection = true;
             RightConnection = true;
             UpConnection = true;
@@ -102,6 +108,7 @@ public class RotPuzPiece : MonoBehaviour
         else if(type == PieceType.Cross)
         {
             currentTexture = pieceShapes[3];
+            currentPoweredTexture = pieceShapesPowered[3];
             LeftConnection = true;
             RightConnection = true;
             UpConnection = true;
@@ -110,6 +117,7 @@ public class RotPuzPiece : MonoBehaviour
         else
         {
             currentTexture = pieceShapes[4];
+            currentPoweredTexture = pieceShapesPowered[4];
             LeftConnection = false;
             RightConnection = false;
             UpConnection = false;
@@ -325,13 +333,23 @@ public class RotPuzPiece : MonoBehaviour
         }
         if (isConnectedToStart)
         {
-            this.gameObject.GetComponent<Image>().color = Color.red;
+            this.gameObject.GetComponent<Image>().sprite = currentPoweredTexture;
         }
         else
         {
-            this.gameObject.GetComponent<Image>().color = Color.white;
+            this.gameObject.GetComponent<Image>().sprite = currentTexture;
         }
         if (cordOnArray == new Vector2(RotPuzArray.GetLength(0) - 1, RotPuzArray.GetLength(1)-1) && isConnectedToStart && RightConnection)
+        {
+            StartCoroutine(DelayFinish());
+            
+            
+        }
+    }
+    IEnumerator DelayFinish()
+    {
+        yield return new WaitForSeconds(0.25f);
+        if (cordOnArray == new Vector2(RotPuzArray.GetLength(0) - 1, RotPuzArray.GetLength(1) - 1) && isConnectedToStart && RightConnection)
         {
             Debug.Log("Completed");
             rotpuzzleScript.TellPuzzleCompleted();

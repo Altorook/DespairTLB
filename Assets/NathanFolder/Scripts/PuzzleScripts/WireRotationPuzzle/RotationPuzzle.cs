@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RotationPuzzle : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class RotationPuzzle : MonoBehaviour
     [SerializeField] List<Vector2> TruePath = new List<Vector2>();
     [SerializeField] GameObject TilePrefab;
     [SerializeField] GameObject GridParent;
-
+    [SerializeField] Image background;
+    [SerializeField] Sprite completedSprite;
     public bool isCompleted;
     public UnityEvent PuzzleCompleted;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -377,6 +379,7 @@ public class RotationPuzzle : MonoBehaviour
     {
         if(isCompleted == false)
         {
+            background.sprite = completedSprite;
             PuzzleCompleted.Invoke();
             isCompleted = true;
         }
