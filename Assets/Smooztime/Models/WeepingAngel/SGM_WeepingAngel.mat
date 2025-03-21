@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7351571999150819881
+--- !u!114 &-4650132162604058524
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SGM_WeepingAngel
-  m_Shader: {fileID: -6465566751694194690, guid: 4c648b5d2c731db45b00d71238cdd846, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4028c57f69b9f40efb45e7ea16e2b350, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,32 +37,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_6c8462f569d34e979b430334e1c130d3_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
+    - _Base_Color:
+        m_Texture: {fileID: 2800000, guid: 41f97462c15b04c54a7b5b5875f319f0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_726b4c8995d54ea4abcf441797a97d25_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_79cf87f62055436c8d61509bad70e1ff_Texture_1_Texture2D:
+    - _Normal:
         m_Texture: {fileID: 2800000, guid: bfa4b53c9603ad14b833e87ecea733c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_93a8e82b439b47aabc2c7f1bb09f322a_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e179b8d2563a4a6f84cd92ce6c14f00a_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e75084c789774485990599bdb3fcecd5_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 24cd32a9402ec5e4bbbb88be20256445, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_ef526421f7d64453b2098b8211d3abe6_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: ab8444cf36bc36e46ad23152196089ce, type: 3}
+    - _PBR:
+        m_Texture: {fileID: 2800000, guid: 70e4aaf17c6424f66a440c3d35297169, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -79,10 +63,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metallic: 0
+    - _AO_Value: 1
+    - _Height_Value: 0.5
+    - _Metallic_Value: 0
+    - _Pixelated_Amount: 2000
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Roughness: 0
+    - _Roughness_Value: 0
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

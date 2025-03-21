@@ -89,7 +89,7 @@ public class WeepingAngel : MonoBehaviour
         
         if(currentState == WeepingState.ScareState)
         {
-            //play sound for a jump here 
+            AudioManager.PlaySound(1); 
         }
         //go to hide animation and hold position covering face here
         _anim.SetBool("IsRunning", false);
@@ -116,11 +116,11 @@ public class WeepingAngel : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
-        //play scream
+        AudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
-        //play silly scream
+        AudioManager.PlaySound(2);
         yield return new WaitForSeconds(1.19f);
-        //neck snap
+        AudioManager.PlaySound(3);
         yield return new WaitForSeconds(0.45f);
         SceneManager.LoadScene("Kyle Scene");
     }
