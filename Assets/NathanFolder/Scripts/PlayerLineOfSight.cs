@@ -8,10 +8,12 @@ public class PlayerLineOfSight : MonoBehaviour
     Transform ViewOrigin;
     [SerializeField]
     LayerMask layerMask;
+    [SerializeField] SOSanity soSanity;
     public UnityEvent EnemyLookedAt;
     public UnityEvent EnemyNotLookedAt;
     private bool isEnemyLookedAt = false;
     private bool didLookStateChange = false;
+    private bool isLookedAtEnemyWeeping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,19 +44,36 @@ public class PlayerLineOfSight : MonoBehaviour
        // Debug.Log("Looking At " + other.gameObject.name);
         RaycastHit hit;
         Debug.DrawRay(ViewOrigin.position, other.transform.position - ViewOrigin.position);
-        if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
+        if(other.gameObject.tag == "Enemy")
         {
-            isEnemyLookedAt = false;
-         //   Debug.Log(hit.transform.gameObject.name);
-            Debug.Log("CanMove");
+            soSanity.isLookingAtEnemy = true;
         }
-        else
+        if(other.gameObject.name == "WeepingAngel")
         {
-            isEnemyLookedAt = true;
+            if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
+            {
+                isEnemyLookedAt = false;
+                //   Debug.Log(hit.transform.gameObject.name);
+                Debug.Log("CanMove");
+            }
+            else
+            {
+                isEnemyLookedAt = true;
+            }
         }
+
+        
     }
     public void OnTriggerExit(Collider other)
     {
-        isEnemyLookedAt = false;
+        if (other.gameObject.tag == "Enemy")
+        {
+            soSanity.isLookingAtEnemy = false;
+        }
+        if (other.gameObject.name == "WeepingAngel")
+        {
+            isEnemyLookedAt = false;
+
+        }
     }
 }

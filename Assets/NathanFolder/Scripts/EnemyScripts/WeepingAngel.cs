@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class WeepingAngel : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class WeepingAngel : MonoBehaviour
     public WeepingState currentState = 0;
     private WeepingState lastStateBeforeLookedAt;
     private float freezeMult = 1;
+    private Animator _anim;
     [SerializeField] NavMeshAgent weepAi;
     //temp var
     [SerializeField] Transform playerPos;
@@ -39,6 +41,9 @@ public class WeepingAngel : MonoBehaviour
 
     [SerializeField] float maxDistanceBeforeNewPos = 3;
     [SerializeField] float minDistanceBeforeNewPos = .5f;
+
+    [SerializeField] float timeInMurder;
+    [SerializeField] float timeBeforeStopMurder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,12 +51,13 @@ public class WeepingAngel : MonoBehaviour
         resetMaxTime = maxTimeToChange;
         resetMinTime = minTimeToChange;
         resetProb  = murderProbability;
+        _anim = GetComponentInChildren<Animator>();
     }
     void NewHideState()
     {
         timeToChange = Random.Range(minTimeToChange,maxTimeToChange);
         stateReturnTimer = 0;
-        this.gameObject.GetComponent<Renderer>().enabled = false;
+        this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         currentState = WeepingState.HideFromPlayer;
     }
@@ -83,9 +89,10 @@ public class WeepingAngel : MonoBehaviour
         
         if(currentState == WeepingState.ScareState)
         {
-            //play sound for a jump here 
+            AudioManager.PlaySound(1); 
         }
         //go to hide animation and hold position covering face here
+        _anim.SetBool("IsRunning", false);
 
 
         lastStateBeforeLookedAt = currentState;
@@ -105,21 +112,48 @@ public class WeepingAngel : MonoBehaviour
     {
         freezeMult = 0;
         weepAi.speed = 0;
+        _anim.SetBool("IsRunning", false);
+    }
+    IEnumerator DeathProcess()
+    {
+        AudioManager.PlaySound(0);
+        yield return new WaitForSeconds(1.4f);
+        AudioManager.PlaySound(2);
+        yield return new WaitForSeconds(1.19f);
+        AudioManager.PlaySound(3);
+        yield return new WaitForSeconds(0.45f);
+        SceneManager.LoadScene("Kyle Scene");
     }
     private void Murder()
     {
 
         //play stone scraping sound here
-
+        timeInMurder += Time.deltaTime;
+        if(timeInMurder > timeBeforeStopMurder)
+        {
+            murderProbability = resetProb;
+            maxTimeToChange = resetMaxTime;
+            minTimeToChange = resetMinTime;
+            NewHideState();
+            stateReturnTimer = 0;
+            currentState = WeepingState.HideFromPlayer;
+            timeInMurder = 0;
+            
+        }
 
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
         if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
             Debug.Log("UrDEad");
+            NewHideState();
+            StartCoroutine(DeathProcess());
         }
+
+        _anim.SetBool("IsRunning", true);
     }
     private void Scare()
     {
+        this.transform.LookAt(playerPos.position);
         //maybe play breathing SFX here. or something to slightly hint you are not alone
         if(Vector3.Distance(transform.position,playerPos.position) > maxDistanceBeforeNewPos || Vector3.Distance(transform.position, playerPos.position) < minDistanceBeforeNewPos)
         {
@@ -129,7 +163,7 @@ public class WeepingAngel : MonoBehaviour
     private void ScarePosition()
     {
         this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-        this.gameObject.GetComponent<Renderer>().enabled = true;
+        this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = true;
         transform.position = behindPlayerTransform.position;
         currentState = WeepingState.ScareState;
     }
@@ -164,7 +198,7 @@ public class WeepingAngel : MonoBehaviour
                 maxTimeToChange = resetMaxTime;
                 minTimeToChange = resetMinTime;
                 this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-                this.gameObject.GetComponent<Renderer>().enabled = true;
+                this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = true;
                 transform.position = furthestSpawnPoint;
             }
             else

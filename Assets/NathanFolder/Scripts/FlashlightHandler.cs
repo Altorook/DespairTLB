@@ -9,9 +9,11 @@ public class FlashlightHandler : MonoBehaviour
     [SerializeField] float currentFlashlightCharge;
     [SerializeField] float flashlightChargeDrainSpeed;
     [SerializeField] float flashLightChargeRate;
+    [SerializeField] float batteryChargeValue;
     [SerializeField] Light flashlightLight;
     [SerializeField] Light flashlightOuterLight;
     [SerializeField] Slider ChargeDisplay;
+    
     bool isMenuOpen;
     void Start()
     {
@@ -43,6 +45,10 @@ public class FlashlightHandler : MonoBehaviour
         {
             currentFlashlightCharge = MaxFlashlightCharge;
         }
+    }
+    public void CollectedBattery()
+    {
+        currentFlashlightCharge += batteryChargeValue;
     }
     private void FixedUpdate()
     {

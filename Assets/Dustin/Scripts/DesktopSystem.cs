@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DesktopSystem : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DesktopSystem : MonoBehaviour
     public UnityEngine.UI.Button closeButtonDoorControl;
     public UnityEngine.UI.Button submitPasswordButton;
 
+    public UnityEvent PasswordCorrect;
     private void Start()
     {
         textFileWindow.SetActive(false);
@@ -47,6 +49,8 @@ public class DesktopSystem : MonoBehaviour
         {
             accessMessageText.text = "Access Granted. Door Unlocked.";
             // Add door logic here later
+            AudioManager.PlaySound(5);
+            PasswordCorrect.Invoke();
         }
         else
         {
