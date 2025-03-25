@@ -21,9 +21,10 @@ public class PuzzleManager : MonoBehaviour
     public void RotPuzzleWasSolved()
     {
         amountOfRotationPuzzlesCompleted++;
-        if(amountOfRotationPuzzlesCompleted >= 3)
+        if(amountOfRotationPuzzlesCompleted >= 4)
         {
             isRotationPuzzleCompleted = true;
+            Debug.Log("puzzle two finished");
             RotationPuzzleDoor.Invoke();
         }
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DesktopInteraction : MonoBehaviour, IInteractable
 {
@@ -10,6 +11,8 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
     public string movementScriptName = "PlayerMovement";
     private MonoBehaviour movementScript;
     private bool isUsingComputer = false;
+    public UnityEvent OpenedComputer;
+    public UnityEvent ClosedComputer;
 
     private void Start()
     {
@@ -35,7 +38,7 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
                 //movementScript.enabled = false; // Disables movement
                 player.SendMessage("ToggleMenuState");
             }
-
+            OpenedComputer.Invoke();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -59,7 +62,7 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
             //movementScript.enabled = true; // Enables movement 
             player.SendMessage("ToggleMenuState");
         }  
-
+        ClosedComputer.Invoke();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

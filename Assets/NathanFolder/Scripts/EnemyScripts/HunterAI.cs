@@ -22,6 +22,7 @@ public class HunterAI : MonoBehaviour
     [SerializeField] float maxIdleTime;
 
     [SerializeField] Transform[] PatrolPoints;
+    [SerializeField] Transform[] AreaTwoPatrolPoints;
     [SerializeField] Transform currentPatrolPosition;
     [SerializeField] float distanceToSwitchToIdle;
 
@@ -39,7 +40,15 @@ public class HunterAI : MonoBehaviour
     [SerializeField] float huntDuration;
     [SerializeField] float timeInHunt;
     [SerializeField] float percentReductionToHuntMinMax;
-
+    public bool inAreaTwo;
+    public void EnteredAreaTwo()
+    {
+        inAreaTwo = true;
+    }
+    public void EnteredAreaOne()
+    {
+        inAreaTwo = false;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,8 +61,17 @@ public class HunterAI : MonoBehaviour
         agent.speed = patrolSpeed;
         if (isOnWayToPatrolPoint == false)
         {
-            int newPatrolPoint = Random.Range(0, PatrolPoints.Length);
-            currentPatrolPosition = PatrolPoints[newPatrolPoint];
+            if (!inAreaTwo)
+            {
+                int newPatrolPoint = Random.Range(0, PatrolPoints.Length);
+                currentPatrolPosition = PatrolPoints[newPatrolPoint];
+            }
+            else
+            {
+                int newPatrolPoint = Random.Range(0, AreaTwoPatrolPoints.Length);
+                currentPatrolPosition = AreaTwoPatrolPoints[newPatrolPoint];
+            }
+           
             isOnWayToPatrolPoint = true;
         }
         agent.destination = currentPatrolPosition.position;
