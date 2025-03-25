@@ -50,7 +50,7 @@ public class WandererSightlineScript : MonoBehaviour
             //   Debug.Log(hit.transform.gameObject.name);
             Debug.Log("CanMove");
         }
-        else
+        else if(WandererEnemy.status.isVented == false)
         {
             isPlayerLookedAt = true;
             WandererEnemy.timeOutOfSightBeforePatrol = timeToLoseEnemy;

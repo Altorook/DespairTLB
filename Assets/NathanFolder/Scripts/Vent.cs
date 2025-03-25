@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Vent : MonoBehaviour
 {
+    [SerializeField] SOVentStatus status;
+    [SerializeField] SOSanity sanity;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +14,21 @@ public class Vent : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+      if(collision.gameObject.tag == "Player")
+        {
+            status.isVented = true;
+            sanity.isVented = true;
+        }  
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            status.isVented = false;
+            sanity.isVented = false;
+        }
     }
 }

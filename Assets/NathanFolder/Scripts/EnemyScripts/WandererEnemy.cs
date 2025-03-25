@@ -14,7 +14,7 @@ public class WandererEnemy : MonoBehaviour
     public WandererState currentState;
 
     public float timeOutOfSightBeforePatrol;
-
+   public SOVentStatus status;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] float patrolSpeed;
     [SerializeField] float chaseSpeed;
@@ -78,6 +78,7 @@ public class WandererEnemy : MonoBehaviour
             currentState = WandererState.Patrol;
             isOnWayToPatrolPoint = false;
         }
+        //need to decide if the wanderer can kill in vents
         if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance)
         {
             //play kill animation

@@ -20,7 +20,7 @@ public class WeepingAngel : MonoBehaviour
     //temp var
     [SerializeField] Transform playerPos;
     float speed = 3.5f;
-
+    [SerializeField] SOVentStatus status;
     [SerializeField]
     float killDistance;
     [SerializeField] float stateReturnTimer;
@@ -128,6 +128,7 @@ public class WeepingAngel : MonoBehaviour
     {
 
         //play stone scraping sound here
+        
         timeInMurder += Time.deltaTime;
         if(timeInMurder > timeBeforeStopMurder)
         {
@@ -143,7 +144,7 @@ public class WeepingAngel : MonoBehaviour
 
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
-        if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance){
+        if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance && !status.isVented){
             Debug.Log("UrDEad");
             NewHideState();
             StartCoroutine(DeathProcess());
@@ -162,14 +163,20 @@ public class WeepingAngel : MonoBehaviour
     }
     private void ScarePosition()
     {
-        this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
-        this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = true;
+        weepAi.enabled = false;
         transform.position = behindPlayerTransform.position;
         currentState = WeepingState.ScareState;
+        this.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = true;
+        weepAi.enabled = true;
     }
+
     private void HideFromPlayer()
     {
-        stateReturnTimer += Time.deltaTime;
+        if (!status.isVented)       
+        {
+            stateReturnTimer += Time.deltaTime;
+        }
         if(stateReturnTimer > timeToChange)
         {
             if(Random.Range(0,1f) < murderProbability)

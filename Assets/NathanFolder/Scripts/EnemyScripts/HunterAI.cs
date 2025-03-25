@@ -13,7 +13,7 @@ public class HunterAI : MonoBehaviour
         Idle = 2,
     }
     public HunterState currentState;
-
+    [SerializeField] SOVentStatus status;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] float patrolSpeed;
     [SerializeField] float chaseSpeed;
@@ -92,7 +92,7 @@ public class HunterAI : MonoBehaviour
             timeInHunt = 0;
             EnterIdle();
         }
-        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance)
+        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented)
         {
             //play kill animation
             Debug.Log("UrDEad");
@@ -122,11 +122,17 @@ public class HunterAI : MonoBehaviour
         {
             case HunterState.Patrol:
                 Patrol();
-                timeNotHunting += Time.deltaTime;
+                if (!status.isVented)
+                {
+                    timeNotHunting += Time.deltaTime;
+                }
                 break;
             case HunterState.Idle:
                 Idle();
-                timeNotHunting += Time.deltaTime;
+                if (!status.isVented)
+                {
+                    timeNotHunting += Time.deltaTime;
+                }
                 break;
             case HunterState.Chase:
                 Chase();
