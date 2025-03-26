@@ -44,9 +44,18 @@ public class PlayerLineOfSight : MonoBehaviour
        // Debug.Log("Looking At " + other.gameObject.name);
         RaycastHit hit;
         Debug.DrawRay(ViewOrigin.position, other.transform.position - ViewOrigin.position);
-        if(other.gameObject.tag == "Enemy")
+        if(other.gameObject.layer == 10)
         {
-            soSanity.isLookingAtEnemy = true;
+            if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
+            {
+                soSanity.isLookingAtEnemy = false;
+                //   Debug.Log(hit.transform.gameObject.name);
+                Debug.Log("CanMove");
+            }
+            else
+            {
+                soSanity.isLookingAtEnemy = true;
+            }
         }
         if(other.gameObject.name == "WeepingAngel")
         {
@@ -66,7 +75,7 @@ public class PlayerLineOfSight : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.layer == 10)
         {
             soSanity.isLookingAtEnemy = false;
         }

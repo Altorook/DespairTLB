@@ -14,6 +14,7 @@ public class SOSanity : ScriptableObject
 
     public float noLightMultiplier;
     public bool isLight;
+    public bool isFlashLight;
     public float lightMultiplier;
 
     public float inSafeAreaRegeneration;

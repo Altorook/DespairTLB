@@ -10,10 +10,15 @@ public class SanityManager : MonoBehaviour
     [SerializeField] SOSanity soSanity;
     [SerializeField] Volume Volume;
     VolumeProfile volprof;
+    [SerializeField] float maxFilmGrain;
+    [SerializeField] float maxChromaticAb;
+    [SerializeField] float maxDistortion;
+    [SerializeField] float maxWhiteBal;
 
     void Start()
     {
         volprof = Volume.sharedProfile;
+        soSanity.currentSanity = soSanity.maxSanity;
     }
     public void TakePills()
     {
@@ -27,7 +32,7 @@ public class SanityManager : MonoBehaviour
         {
             soSanity.totalMult += soSanity.lookingAtEnemyMultiplier;
         }
-        if (soSanity.isLight)
+        if (soSanity.isLight || soSanity.isFlashLight)
         {
             soSanity.totalMult -= soSanity.lightMultiplier;
         }
@@ -45,87 +50,28 @@ public class SanityManager : MonoBehaviour
         }
         else
         {
-            soSanity.currentSanity += Time.deltaTime * soSanity.inSafeAreaRegeneration;
+            if(soSanity.currentSanity <= soSanity.maxSanity)
+            {
+                soSanity.currentSanity += Time.deltaTime * soSanity.inSafeAreaRegeneration;
+            }
         }
-        if(soSanity.currentSanity >= soSanity.maxSanity /2)
-        {
             if (volprof.TryGet<FilmGrain>(out var FG))
             {
 
-                FG.intensity.Override(0f);
+                FG.intensity.Override(Mathf.Lerp(0,maxFilmGrain,1-(soSanity.currentSanity/soSanity.maxSanity)));
             }
             if (volprof.TryGet<ChromaticAberration>(out var ChromaticAberration))
             {
-                ChromaticAberration.intensity.Override(0f);
+                ChromaticAberration.intensity.Override(Mathf.Lerp(0, maxChromaticAb, 1 - (soSanity.currentSanity / soSanity.maxSanity)));
             }
             if (volprof.TryGet<LensDistortion>(out var LD))
             {
-                LD.intensity.Override(0f);
+                LD.intensity.Override(Mathf.Lerp(0, maxDistortion, 1 - (soSanity.currentSanity / soSanity.maxSanity)));
             }
-            if (volprof.TryGet<ColorAdjustments>(out var CA))
-            {
-                CA.saturation.Override(0);
-            }
-        }
-        if (soSanity.currentSanity < soSanity.maxSanity / 2 && soSanity.currentSanity > soSanity.maxSanity / 3)
+        if (volprof.TryGet<WhiteBalance>(out var whiteBal))
         {
-            if(volprof.TryGet<FilmGrain>(out var FG))
-            {
-             
-                FG.intensity.Override(0.5f);
-            }
-            if(volprof.TryGet<ChromaticAberration>(out var ChromaticAberration))
-            {
-                ChromaticAberration.intensity.Override(0.5f);
-            }
-            if (volprof.TryGet<LensDistortion>(out var LD))
-            {
-                LD.intensity.Override(-0.0f);
-            }
-            if(volprof.TryGet<ColorAdjustments>(out var CA))
-            {
-                CA.saturation.Override(-0.5f);
-            }
+            whiteBal.temperature.Override(Mathf.Lerp(0, maxWhiteBal, 1 - (soSanity.currentSanity / soSanity.maxSanity)));
         }
-        if (soSanity.currentSanity < soSanity.maxSanity / 3 && soSanity.currentSanity > soSanity.maxSanity / 5)
-        {
-            if (volprof.TryGet<FilmGrain>(out var FG))
-            {
 
-                FG.intensity.Override(0.7f);
-            }
-            if (volprof.TryGet<ChromaticAberration>(out var ChromaticAberration))
-            {
-                ChromaticAberration.intensity.Override(0.7f);
-            }
-            if (volprof.TryGet<LensDistortion>(out var LD))
-            {
-                LD.intensity.Override(-0.2f);
-            }
-            if (volprof.TryGet<ColorAdjustments>(out var CA))
-            {
-                CA.saturation.Override(-0.7f);
-            }
-        }
-        if (soSanity.currentSanity < soSanity.maxSanity / 5)
-        {
-            if (volprof.TryGet<FilmGrain>(out var FG))
-            {
-
-                FG.intensity.Override(1f);
-            }
-            if (volprof.TryGet<ChromaticAberration>(out var ChromaticAberration))
-            {
-                ChromaticAberration.intensity.Override(1f);
-            }
-            if (volprof.TryGet<LensDistortion>(out var LD))
-            {
-                LD.intensity.Override(-0.4f);
-            }
-            if (volprof.TryGet<ColorAdjustments>(out var CA))
-            {
-                CA.saturation.Override(-1f);
-            }
-        }
     }
 }

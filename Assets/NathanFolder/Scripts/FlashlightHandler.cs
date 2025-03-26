@@ -13,7 +13,8 @@ public class FlashlightHandler : MonoBehaviour
     [SerializeField] Light flashlightLight;
     [SerializeField] Light flashlightOuterLight;
     [SerializeField] Slider ChargeDisplay;
-    
+
+    [SerializeField] SOSanity soSanity;
     bool isMenuOpen;
     void Start()
     {
@@ -22,6 +23,7 @@ public class FlashlightHandler : MonoBehaviour
     public void ToggleFlashlight()
     {
         flashlightIsOn = !flashlightIsOn;
+        soSanity.isFlashLight = flashlightIsOn;
     }
     // Update is called once per frame
     void Update()

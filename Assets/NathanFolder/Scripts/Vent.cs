@@ -15,17 +15,17 @@ public class Vent : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-      if(collision.gameObject.tag == "Player")
+      if(collision.gameObject.layer == 11)
         {
             status.isVented = true;
             sanity.isVented = true;
         }  
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.layer == 11)
         {
             status.isVented = false;
             sanity.isVented = false;
