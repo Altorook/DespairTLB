@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: SOSanity
   m_EditorClassIdentifier: 
   maxSanity: 100
-  currentSanity: 23.217466
+  currentSanity: 100.015
   pillValue: 0.55
   baseLossMult: 0.5
   lookingAtEnemyMultiplier: 0.7
   isLookingAtEnemy: 0
   noLightMultiplier: 0
   isLight: 0
+  isFlashLight: 1
   lightMultiplier: 0.25
   inSafeAreaRegeneration: 1
-  isInSafeArea: 0
+  isInSafeArea: 1
   ventMult: 0.15
   isVented: 0
-  totalMult: 0.5
+  totalMult: 0.25

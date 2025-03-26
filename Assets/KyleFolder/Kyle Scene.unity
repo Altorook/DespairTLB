@@ -10393,8 +10393,8 @@ MonoBehaviour:
   Volume: {fileID: 1568710298}
   maxFilmGrain: 1
   maxChromaticAb: 1
-  maxDistortion: 0.65
-  maxWhiteBal: -30
+  maxDistortion: -0.6
+  maxWhiteBal: -0.4
 --- !u!1 &330723916
 GameObject:
   m_ObjectHideFlags: 0
