@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86929666d70b16e4db5167cf064c8667, type: 3}
   m_Name: SOSanity
   m_EditorClassIdentifier: 
-  currentSanity: 0
+  maxSanity: 100
+  currentSanity: 34.639805
+  pillValue: 0.55
+  baseLossMult: 1
+  lookingAtEnemyMultiplier: 0.7
+  isLookingAtEnemy: 0
+  noLightMultiplier: 0
+  isLight: 0
+  lightMultiplier: 0.3
+  inSafeAreaRegeneration: 1
+  isInSafeArea: 0
+  ventMult: 0.2
+  isVented: 0
+  totalMult: 1

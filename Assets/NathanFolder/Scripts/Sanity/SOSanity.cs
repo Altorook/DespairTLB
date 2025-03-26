@@ -26,6 +26,7 @@ public class SOSanity : ScriptableObject
     private void Start()
     {
         currentSanity = 100;
+        maxSanity = 100;
         isLookingAtEnemy = false;
         isLight = false;
         isInSafeArea = false;
