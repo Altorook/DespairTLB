@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class DesktopInteraction : MonoBehaviour, IInteractable
+public class KeypadInteraction : MonoBehaviour, IInteractable
 {
-    [Header("References")]
-    public GameObject desktopCanvas;
+    [Header("Reference")]
+    public GameObject keypadCanvas;
     public Camera mainCamera;
-    public Camera computerCamera;
+    public Camera keypadCamera;
     public GameObject player;
     public string movementScriptName = "PlayerMovement";
     private MonoBehaviour movementScript;
-    private bool isUsingComputer = false;
+    private bool isUsingKeypad = false;
 
     private void Start()
     {
@@ -17,22 +17,21 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
 
         if (movementScript == null)
         {
-            Debug.LogError($"Movement script '{movementScriptName}' not found on {player.name}!");
+            Debug.LogError($"Movement script '{movementScriptName}' not found on {player.name}");
         }
     }
 
     public void InteractedWith()
     {
-        if (!isUsingComputer)
+        if (!isUsingKeypad)
         {
-            isUsingComputer = true;
+            isUsingKeypad = true;
             mainCamera.gameObject.SetActive(false);
-            computerCamera.gameObject.SetActive(true);
-            desktopCanvas.SetActive(true);
+            keypadCamera.gameObject.SetActive(true);
+            keypadCanvas.SetActive(true);
 
             if (movementScript != null)
             {
-                //movementScript.enabled = false; // Disables movement
                 player.SendMessage("ToggleMenuState");
             }
 
@@ -40,28 +39,28 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
             Cursor.visible = true;
         }
     }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isUsingComputer)
+        if (Input.GetKeyDown(KeyCode.Escape) && isUsingKeypad)
         {
-            ExitComputer();
+            ExitKeypad();
         }
     }
 
-    private void ExitComputer()
+    private void ExitKeypad()
     {
-        isUsingComputer = false;
+        isUsingKeypad = false;
         mainCamera.gameObject.SetActive(true);
-        computerCamera.gameObject.SetActive(false);
+        keypadCamera.gameObject.SetActive(false);
 
         if (movementScript != null)
         {
-            //movementScript.enabled = true; // Enables movement 
             player.SendMessage("ToggleMenuState");
-        }  
+        }
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        desktopCanvas.SetActive(false);
+        keypadCanvas.SetActive(false);
     }
 }
