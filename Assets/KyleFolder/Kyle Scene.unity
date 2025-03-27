@@ -20270,6 +20270,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1334960340}
+    - target: {fileID: 3070235533187869649, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
+      propertyPath: m_VersionIndex
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5450409975305942343, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -71701,9 +71705,9 @@ MeshRenderer:
   - {fileID: 2100000, guid: 37370f53fe3df3d44941ecd7167fe5cf, type: 2}
   - {fileID: 2100000, guid: 37370f53fe3df3d44941ecd7167fe5cf, type: 2}
   - {fileID: 2100000, guid: 1fc2b01ff7eb09541942dd34fb654ea6, type: 2}
-  - {fileID: 2100000, guid: 4a8bbe3c93275334fbc5defc694301cf, type: 2}
+  - {fileID: 2100000, guid: 97c5ba47d9cebe94184b416b7934686b, type: 2}
   - {fileID: -4018286686147086024, guid: 0ed26064408952149b3dfc9336152311, type: 3}
-  - {fileID: 2100000, guid: e47b7f0130b69ad4ca0146b549f2719e, type: 2}
+  - {fileID: 2100000, guid: 4825bf317904f6847ba32c59e79247a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88290,11 +88294,11 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 37370f53fe3df3d44941ecd7167fe5cf, type: 2}
-  - {fileID: 2100000, guid: 4a8bbe3c93275334fbc5defc694301cf, type: 2}
+  - {fileID: 2100000, guid: 97c5ba47d9cebe94184b416b7934686b, type: 2}
   - {fileID: -4018286686147086024, guid: 0ed26064408952149b3dfc9336152311, type: 3}
   - {fileID: 2100000, guid: 37370f53fe3df3d44941ecd7167fe5cf, type: 2}
   - {fileID: 2100000, guid: 1fc2b01ff7eb09541942dd34fb654ea6, type: 2}
-  - {fileID: 2100000, guid: e47b7f0130b69ad4ca0146b549f2719e, type: 2}
+  - {fileID: 2100000, guid: 4825bf317904f6847ba32c59e79247a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193220,12 +193224,20 @@ PrefabInstance:
       objectReference: {fileID: 636393938}
     - target: {fileID: 3070235533187869649, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
       propertyPath: m_VersionIndex
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5450409975305942343, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 636393938}
+    - target: {fileID: 5843644519674260438, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c5ba47d9cebe94184b416b7934686b, type: 2}
+    - target: {fileID: 5843644519674260438, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4825bf317904f6847ba32c59e79247a9, type: 2}
     - target: {fileID: 6502039124856395150, guid: 392f72bf672e66241b4fd81134583cc5, type: 3}
       propertyPath: m_Name
       value: ElevatorRoom_Prefab
