@@ -61,6 +61,6 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        keypadCanvas.SetActive(false);
+       // keypadCanvas.SetActive(false);
     }
 }
