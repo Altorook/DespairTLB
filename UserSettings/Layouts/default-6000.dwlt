@@ -1647,8 +1647,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 337
-    y: 102
+    x: 338
+    y: 24
     width: 1043
     height: 494
   m_SerializedDataModeController:
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 572
+    y: 494
     width: 336
     height: 24
   m_SerializedDataModeController:
@@ -2476,7 +2476,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 79}
     m_SelectedIDs: cad90000
     m_LastClickedID: 55754
-    m_ExpandedIDs: 00000000cad9000000ca9a3b
+    m_ExpandedIDs: 0000000012e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2505,7 +2505,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cad90000
+    m_ExpandedIDs: 0000000012e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 622
+    y: 544
     width: 1381
     height: 375
   m_SerializedDataModeController:
@@ -2629,7 +2629,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 17}
     m_SelectedIDs: 1cdc0000
     m_LastClickedID: 56348
-    m_ExpandedIDs: 00000000cad90000c2db000016dc000000ca9a3b
+    m_ExpandedIDs: 0000000012e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2658,7 +2658,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cad90000
+    m_ExpandedIDs: 0000000012e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2737,8 +2737,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1382
-    y: 102
+    x: 1383
+    y: 24
     width: 345
     height: 895
   m_SerializedDataModeController:
@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 102
+    y: 24
     width: 336
     height: 444
   m_SerializedDataModeController:
@@ -2804,7 +2804,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44ef0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 1efbffff
       m_RenameOverlay:
