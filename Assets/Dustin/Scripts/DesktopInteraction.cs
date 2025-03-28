@@ -65,6 +65,6 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
         ClosedComputer.Invoke();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        desktopCanvas.SetActive(false);
+      //  desktopCanvas.SetActive(false);
     }
 }

@@ -3695,6 +3695,7 @@ MonoBehaviour:
     m_Bits: 512
   castDistance: 3
   interactText: {fileID: 0}
+  CrossHair: {fileID: 0}
 --- !u!1 &874771334
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,7 +8379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1596799598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8718,6 +8719,12 @@ MonoBehaviour:
   computerCamera: {fileID: 1374433811}
   player: {fileID: 863666265}
   movementScriptName: PlayerMovement
+  OpenedComputer:
+    m_PersistentCalls:
+      m_Calls: []
+  ClosedComputer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1669546656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10881,7 +10888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2078174683
 MonoBehaviour:
   m_ObjectHideFlags: 0
