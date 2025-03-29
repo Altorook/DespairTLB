@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 175
+  controlID: 167
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 150}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 109
+  controlID: 106
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 110
+  controlID: 107
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -925,9 +925,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 40.29861, y: -17.07748, z: -114.92996}
     speed: 2
-    m_Value: {x: -119.587654, y: -5.333506, z: 61.40231}
+    m_Value: {x: 40.29861, y: -17.07748, z: -114.92996}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -973,13 +973,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.29385027, y: 0.49378672, z: -0.18181218, w: -0.7980267}
     speed: 2
-    m_Value: {x: 0.02392356, y: -0.51650983, z: 0.01434543, w: 0.85582674}
+    m_Value: {x: -0.29385027, y: 0.49378672, z: -0.18181218, w: -0.7980267}
   m_Size:
-    m_Target: 10
+    m_Target: 10.92025
     speed: 2
-    m_Value: 71.13098
+    m_Value: 10.92025
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1146,9 +1146,9 @@ MonoBehaviour:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 201}
-    m_SelectedIDs: c2b90000
-    m_LastClickedID: 47554
-    m_ExpandedIDs: 0000000034be000036be000038be00003abe00003cbe00003ebe0000
+    m_SelectedIDs: 84be0000
+    m_LastClickedID: 48772
+    m_ExpandedIDs: 0000000062d1000064d1000066d1000068d100006ad100006cd10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1177,7 +1177,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000034be000036be000038be00003abe00003cbe00003ebe0000
+    m_ExpandedIDs: 0000000062d1000064d1000066d1000068d100006ad100006cd10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1282,7 +1282,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/NathanFolder/Scripts
+    - Assets/KyleFolder/Models/BetterPrefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1292,16 +1292,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/NathanFolder/Scripts
+  - Assets/KyleFolder/Models/BetterPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\natha\OneDrive\Desktop\Despair\DespairTLB
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 44b90000
-    m_LastClickedID: 47428
-    m_ExpandedIDs: 0000000034be000036be000038be00003abe00003cbe00003ebe0000
+    m_SelectedIDs: 12370100
+    m_LastClickedID: 79634
+    m_ExpandedIDs: 0000000062d1000064d1000066d1000068d100006ad100006cd10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1330,7 +1330,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000034be000036be000038be00003abe00003cbe00003ebe0000
+    m_ExpandedIDs: 0000000062d1000064d1000066d1000068d100006ad100006cd10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1478,7 +1478,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6480fdfff28efdff7a90fdff2eb1ffff44b1ffff8acfffff9acfffff56dcffff08e8ffff1efbffff0aae000010b200006adb000072e00000a0d10100c8d1010052d7010030da0100
+      m_ExpandedIDs: f2bcfffff6e3ffff76f7ffff2cc70000b0280100602901000e360100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
