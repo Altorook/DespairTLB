@@ -30,18 +30,21 @@ public class InteractCast : MonoBehaviour
     {
         interactText.SetActive(false);
         RaycastHit hit;
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, castDistance, layerMask))
+        if (!uiOpen)
         {
-            if (hit.transform.gameObject.GetComponent<IInteractable>() != null && !uiOpen)
+            Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            if (Physics.Raycast(ray.origin, ray.direction, out hit, castDistance, layerMask))
             {
-                interactText.SetActive(true); CrossHair.SetActive(true);
+                if (hit.transform.gameObject.GetComponent<IInteractable>() != null && !uiOpen)
+                {
+                    interactText.SetActive(true); CrossHair.SetActive(true);
+                }
+                else
+                {
+                    interactText.SetActive(false); CrossHair.SetActive(false);
+                }
             }
-            else { 
-                interactText.SetActive(false); CrossHair.SetActive(false);
-            }
-
-        }
+        }    
     }
     void CastTheRay()
     {

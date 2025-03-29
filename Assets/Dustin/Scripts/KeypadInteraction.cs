@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KeypadInteraction : MonoBehaviour, IInteractable
 {
@@ -10,7 +11,8 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
     public string movementScriptName = "PlayerMovement";
     private MonoBehaviour movementScript;
     private bool isUsingKeypad = false;
-
+    public UnityEvent OpenedComputer;
+    public UnityEvent ClosedComputer;
     private void Start()
     {
         movementScript = player.GetComponent(movementScriptName) as MonoBehaviour;
@@ -34,7 +36,7 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
             {
                 player.SendMessage("ToggleMenuState");
             }
-
+            OpenedComputer.Invoke();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -58,7 +60,7 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
         {
             player.SendMessage("ToggleMenuState");
         }
-
+        ClosedComputer.Invoke();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
        // keypadCanvas.SetActive(false);
