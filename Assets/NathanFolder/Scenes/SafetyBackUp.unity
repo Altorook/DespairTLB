@@ -220,6 +220,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5699450
 GameObject:
   m_ObjectHideFlags: 0
@@ -11397,6 +11427,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &252754650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56745,6 +56805,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &584538136
 Transform:
   m_ObjectHideFlags: 0
@@ -63338,6 +63428,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 1
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &705526818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129596,6 +129716,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &732030668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138402,6 +138552,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &887000542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138833,6 +139013,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &890284985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146856,6 +147066,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1078693957
 GameObject:
   m_ObjectHideFlags: 0
@@ -189347,6 +189587,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 1
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1390876976
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -199958,6 +200228,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1609134940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209333,6 +209633,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1693726561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -213937,6 +214267,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1746240418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -217158,6 +217518,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 1
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1834398312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -217630,6 +218020,67 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1848844050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848844052}
+  - component: {fileID: 1848844051}
+  m_Layer: 0
+  m_Name: ElevatorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1848844051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848844050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7477ce8ec182fc54a9b62346f1d5bd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllElevatorButtons:
+  - {fileID: 1834398311}
+  - {fileID: 1957125524}
+  - {fileID: 252754649}
+  - {fileID: 889903983}
+  - {fileID: 1871110210}
+  - {fileID: 1693726560}
+  - {fileID: 3667774}
+  - {fileID: 1078401728}
+  - {fileID: 1390876975}
+  - {fileID: 887000541}
+  - {fileID: 732030667}
+  - {fileID: 584538135}
+  - {fileID: 705526817}
+  - {fileID: 1880357285}
+  - {fileID: 1609134939}
+  - {fileID: 1746240417}
+--- !u!4 &1848844052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848844050}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 66.99815, y: 7.703211, z: 12.8692465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1849058094
 Mesh:
   m_ObjectHideFlags: 0
@@ -218394,6 +218845,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 1
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1871110211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -218988,6 +219469,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1880357286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -223239,6 +223750,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   canAccessFloor: 0
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1963476269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239992,3 +240533,4 @@ SceneRoots:
   - {fileID: 271663433}
   - {fileID: 1420130583}
   - {fileID: 1991786097}
+  - {fileID: 1848844052}

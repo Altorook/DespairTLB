@@ -14,10 +14,21 @@ public class ElevatorLevelButton : MonoBehaviour , IInteractable
     Quaternion parentRelativeRot;
     [SerializeField] bool canAccessFloor;
 
+    public UnityEvent DisableAllInteraction;
+    public UnityEvent EnableAllInteraction;
+    bool canInteract = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
+    }
+    public void AllowInteract()
+    {
+canInteract = true;
+    }
+    public void CannotInteract()
+    {
+        canInteract = false;
     }
     public void EnableFloor()
     {
@@ -25,10 +36,10 @@ public class ElevatorLevelButton : MonoBehaviour , IInteractable
     }
     public void InteractedWith()
     {
-        if(!isOnFloorOfButton && canAccessFloor)
+        if(!isOnFloorOfButton && canAccessFloor && canInteract)
         {
             StartCoroutine(WaitForElevator());
-            
+            DisableAllInteraction.Invoke();
             CloseThisElevator.Invoke();
         }
     }
@@ -53,6 +64,7 @@ public class ElevatorLevelButton : MonoBehaviour , IInteractable
         OpenDesiredFloor.Invoke();
         yield return new WaitForSeconds(.2f);
         playerTransform.SetParent(null);
+        EnableAllInteraction.Invoke();
     }
     // Update is called once per frame
     void Update()
