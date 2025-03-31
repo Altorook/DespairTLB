@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 50
+  controlID: 21
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 165
+  controlID: 168
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 150}
   m_MaxSize: {x: 16192, y: 24288}
   vertical: 1
-  controlID: 89
+  controlID: 91
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 90
+  controlID: 92
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -926,9 +926,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.54249907, y: 1.550002, z: -1.657045}
+    m_Target: {x: 0.31460002, y: 2.5675054, z: -1.096604}
     speed: 2
-    m_Value: {x: -0.54249907, y: 1.550002, z: -1.657045}
+    m_Value: {x: 0.31460002, y: 2.5675054, z: -1.096604}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -974,20 +974,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.10886687, y: -0.113960505, z: 0.012566495, w: -0.9874252}
+    m_Target: {x: 0.039709006, y: 0.6028482, z: -0.030037656, w: 0.7963179}
     speed: 2
-    m_Value: {x: -0.1088853, y: -0.112478934, z: 0.012403146, w: -0.98759234}
+    m_Value: {x: 0.039663363, y: 0.60403377, z: -0.030096777, w: 0.79540193}
   m_Size:
-    m_Target: 3.5457585
+    m_Target: 7.0856137
     speed: 2
-    m_Value: 18.996029
+    m_Value: 7.419491
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -998,7 +998,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08413905, y: 0.040938992, z: -0.00345757, w: -0.9956064}
+  m_LastSceneViewRotation: {x: -0.10526101, y: 0.69346166, z: 0.10354057, w: 0.7052221}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 14}
@@ -2457,7 +2457,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Smooztime/Models/Props/EmergencyLight
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2467,16 +2467,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Smooztime/Models/Props/EmergencyLight
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\BVC\Game2501_RapidDevelopment\Game2\DespairTLB
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a8e40000
-    m_LastClickedID: 58536
-    m_ExpandedIDs: 00000000a8e4000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 296}
+    m_SelectedIDs: 80e70000
+    m_LastClickedID: 59264
+    m_ExpandedIDs: 00000000c4e40000c8e600005ce7000072e7000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2505,7 +2505,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a8e40000
+    m_ExpandedIDs: 00000000c4e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2534,7 +2534,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: 98e70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2559,7 +2559,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 19}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 50
@@ -2610,7 +2610,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Smooztime/Prefabs/Props
+    - Assets/Smooztime/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2620,16 +2620,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Smooztime/Prefabs/Props
+  - Assets/Smooztime/Prefabs
   m_LastFoldersGridSize: 65
   m_LastProjectPath: D:\BVC\Game2501_RapidDevelopment\Game2\DespairTLB
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 17}
-    m_SelectedIDs: b2e80000
-    m_LastClickedID: 59570
-    m_ExpandedIDs: 00000000a8e40000aae6000028e700002ae7000036e7000000ca9a3bffffff7f
+    m_SelectedIDs: 5ae70000
+    m_LastClickedID: 59226
+    m_ExpandedIDs: 00000000c4e40000c8e600005ae700005ce7000072e7000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2658,7 +2658,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a8e40000
+    m_ExpandedIDs: 00000000c4e40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2804,23 +2804,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 12ebfeff
-      m_LastClickedID: -70894
-      m_ExpandedIDs: 321dffff9a1effff0e2dffffa82dffffee39fffffa39ffff7a3bffffde9dffff76b1ffff72c3ffff7ccfffff5ad0ffffacfaffff
+      m_SelectedIDs: 122ffeff
+      m_LastClickedID: -119022
+      m_ExpandedIDs: 0e50fffff66bffff249fffff449fffff1efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Generator
-        m_OriginalName: Generator
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -69742
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 6}
