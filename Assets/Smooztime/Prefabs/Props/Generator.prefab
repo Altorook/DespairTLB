@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reactor
       objectReference: {fileID: 0}
+    - target: {fileID: 5636783044527674064, guid: fcab2e45927b68c45a0bf55ea297f467, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
