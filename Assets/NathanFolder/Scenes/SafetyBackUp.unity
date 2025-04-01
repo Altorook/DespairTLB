@@ -44106,9 +44106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftDoor: {fileID: 41443639}
   RightDoor: {fileID: 2005472195}
-  openDistance: 1
-  openRate: 0.2
-  openDuration: 5
+  openDistance: 0.75
+  openRate: 0.85
+  openDuration: 2
   EnableFloor:
     m_PersistentCalls:
       m_Calls:
@@ -44151,6 +44151,36 @@ MonoBehaviour:
       - m_Target: {fileID: 1746240417}
         m_TargetAssemblyTypeName: ElevatorLevelButton, Assembly-CSharp
         m_MethodName: EnableFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -148038,9 +148068,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftDoor: {fileID: 627233994}
   RightDoor: {fileID: 492598788}
-  openDistance: 1
-  openRate: 0.2
-  openDuration: 5
+  openDistance: 0.75
+  openRate: 0.85
+  openDuration: 2
   EnableFloor:
     m_PersistentCalls:
       m_Calls:
@@ -148083,6 +148113,36 @@ MonoBehaviour:
       - m_Target: {fileID: 1880357285}
         m_TargetAssemblyTypeName: ElevatorLevelButton, Assembly-CSharp
         m_MethodName: EnableFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -163525,9 +163585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftDoor: {fileID: 1727500532}
   RightDoor: {fileID: 1911244316}
-  openDistance: 1
-  openRate: 0.2
-  openDuration: 5
+  openDistance: 0.75
+  openRate: 0.85
+  openDuration: 2
   EnableFloor:
     m_PersistentCalls:
       m_Calls:
@@ -163570,6 +163630,36 @@ MonoBehaviour:
       - m_Target: {fileID: 1609134939}
         m_TargetAssemblyTypeName: ElevatorLevelButton, Assembly-CSharp
         m_MethodName: EnableFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -221102,9 +221192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftDoor: {fileID: 634139251}
   RightDoor: {fileID: 518194243}
-  openDistance: 1
-  openRate: 0.2
-  openDuration: 5
+  openDistance: 0.75
+  openRate: 0.85
+  openDuration: 2
   EnableFloor:
     m_PersistentCalls:
       m_Calls:
@@ -221147,6 +221237,36 @@ MonoBehaviour:
       - m_Target: {fileID: 705526817}
         m_TargetAssemblyTypeName: ElevatorLevelButton, Assembly-CSharp
         m_MethodName: EnableFloor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DisableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: DisableElevatorButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableAllInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1848844051}
+        m_TargetAssemblyTypeName: ElevatorManager, Assembly-CSharp
+        m_MethodName: EnableElevatorButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
