@@ -163531,7 +163531,7 @@ MonoBehaviour:
   EnableFloor:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 252754647}
+      - m_Target: {fileID: 252754649}
         m_TargetAssemblyTypeName: ElevatorLevelButton, Assembly-CSharp
         m_MethodName: EnableFloor
         m_Mode: 1
@@ -201503,7 +201503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1568710298
 MonoBehaviour:
   m_ObjectHideFlags: 0
