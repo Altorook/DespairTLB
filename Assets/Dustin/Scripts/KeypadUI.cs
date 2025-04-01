@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class KeyPadUI : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class KeyPadUI : MonoBehaviour
 
     private string currentInput = "";
 
+    public UnityEvent PasswordCorrect;
     private void Start()
     {
         keypadWindow.SetActive(false);
@@ -80,6 +82,7 @@ public class KeyPadUI : MonoBehaviour
         if (currentInput == codeManager.CorrectCode)
         {
             feedbackText.text = "Access Granted. Door Unlocked.";
+            PasswordCorrect.Invoke();
             //AudioManager.PlaySound(5);
             //Debug.Log("[Keypad] Correct code entered.");
         }

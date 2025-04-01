@@ -4,6 +4,8 @@ using UnityEngine;
 public class TiltPainting : MonoBehaviour, IInteractable
 {
     bool isTilted;
+    [SerializeField]
+    Rigidbody body;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,16 +21,18 @@ public class TiltPainting : MonoBehaviour, IInteractable
     {
         if(isTilted == false)
         {
-            StartCoroutine(HoldAngle());
+            //StartCoroutine(HoldAngle());
+            body.isKinematic = false;
+            isTilted = true;
         }
     }
-    IEnumerator HoldAngle()
-    {
-        isTilted = true;
-        this.transform.parent.transform.rotation = Quaternion.Euler(this.transform.parent.transform.rotation.x + 30, this.transform.parent.transform.rotation.y, this.transform.parent.transform.rotation.z);
-        yield return new WaitForSeconds(5);
-        isTilted = false;
-        this.transform.parent.transform.rotation = Quaternion.Euler(this.transform.parent.transform.rotation.x, this.transform.parent.transform.rotation.y, this.transform.parent.transform.rotation.z);
+    //IEnumerator HoldAngle()
+    //{
+    //    isTilted = true;
+    //    this.transform.parent.transform.rotation = Quaternion.Euler(this.transform.parent.transform.rotation.x + 30, this.transform.parent.transform.rotation.y, this.transform.parent.transform.rotation.z);
+    //    yield return new WaitForSeconds(5);
+    //    isTilted = false;
+    //    this.transform.parent.transform.rotation = Quaternion.Euler(this.transform.parent.transform.rotation.x, this.transform.parent.transform.rotation.y, this.transform.parent.transform.rotation.z);
 
-    }
+    //}
 }
