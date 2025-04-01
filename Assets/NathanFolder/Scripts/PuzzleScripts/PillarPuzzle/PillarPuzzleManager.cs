@@ -14,13 +14,20 @@ public class PillarPuzzleManager : MonoBehaviour
     public void NewPillarSolved(int indexRGB)
     {
         lightsSolved[indexRGB] = true;
-        lights[indexRGB].enabled = lightsSolved[indexRGB];
+        if (lightsSolved[indexRGB])
+        {
+            lights[indexRGB].color = new Color(0,255,0);
+        }
+       
         AreAllSolved();
     }
     public void PillarLost(int indexRGB)
     {
         lightsSolved[indexRGB] = false;
-        lights[indexRGB].enabled = lightsSolved[indexRGB];
+        if (!lightsSolved[indexRGB])
+        {
+            lights[indexRGB].color = new Color(255, 0, 0);
+        }
         AreAllSolved();
     }
     private void AreAllSolved()
