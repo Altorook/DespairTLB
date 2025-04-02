@@ -5,6 +5,8 @@ public class InteractCast : MonoBehaviour
  /*   [SerializeField] Transform cameraTransform;*/
     [SerializeField]
     LayerMask layerMask;
+    [SerializeField]
+    LayerMask layerMaskWPlayer;
     [SerializeField] float castDistance;
     [SerializeField] GameObject interactText;
     bool uiOpen;
@@ -33,28 +35,39 @@ public class InteractCast : MonoBehaviour
         if (!uiOpen)
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-            if (Physics.Raycast(ray.origin, ray.direction, out hit, castDistance, layerMask))
-            {
-                if (hit.transform.gameObject.GetComponent<IInteractable>() != null && !uiOpen)
+
+            
+           
+
+
+                if (Physics.Raycast(ray.origin, ray.direction, out hit, castDistance, ~layerMask))
                 {
-                    interactText.SetActive(true); CrossHair.SetActive(true);
+                    if (hit.transform.gameObject.GetComponent<IInteractable>() != null && !uiOpen)
+                    {
+                   // if (!Physics.Raycast(ray.origin, ray.direction, out hit, Vector3.Distance(hit.transform.position, this.transform.position), ~layerMaskWPlayer.value))
+                  //  {
+                        interactText.SetActive(true); CrossHair.SetActive(true);
+                  //  }                    
+                    }
+                    else
+                    {
+                        interactText.SetActive(false); CrossHair.SetActive(false);
+                    }
                 }
-                else
-                {
-                    interactText.SetActive(false); CrossHair.SetActive(false);
-                }
-            }
+            
         }    
     }
     void CastTheRay()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-        if(Physics.Raycast(ray.origin, ray.direction,out hit , castDistance , layerMask))
+        if(Physics.Raycast(ray.origin, ray.direction,out hit , castDistance , ~layerMask))
         {
-            Debug.Log(hit.transform.gameObject.name);
-            if(hit.transform.gameObject.GetComponent<IInteractable>() != null) hit.transform.gameObject.GetComponent<IInteractable>().InteractedWith();
-
+           // if (!Physics.Raycast(ray.origin, ray.direction, Vector3.Distance(hit.transform.position, this.transform.position), ~layerMaskWPlayer.value))
+           // {
+              //  Debug.Log(hit.transform.gameObject.name);
+                if (hit.transform.gameObject.GetComponent<IInteractable>() != null) hit.transform.gameObject.GetComponent<IInteractable>().InteractedWith();
+          //  }
         }
 
     }
