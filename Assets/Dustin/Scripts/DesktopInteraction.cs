@@ -28,6 +28,7 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
     {
         if (!isUsingComputer)
         {
+            OpenedComputer.Invoke();
             isUsingComputer = true;
             mainCamera.gameObject.SetActive(false);
             computerCamera.gameObject.SetActive(true);
@@ -38,7 +39,7 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
                 //movementScript.enabled = false; // Disables movement
                 player.SendMessage("ToggleMenuState");
             }
-            OpenedComputer.Invoke();
+           
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
