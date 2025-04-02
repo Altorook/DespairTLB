@@ -140062,7 +140062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18d0c7baba182b4393c66ef40ad6a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasItem: 0
+  hasItem: 1
   reactorItem: {fileID: 1258702831}
 --- !u!4 &815611408
 Transform:
@@ -166922,6 +166922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 815611408}
     m_Modifications:
+    - target: {fileID: 533735237754024384, guid: fcab2e45927b68c45a0bf55ea297f467, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5221812509235178208, guid: fcab2e45927b68c45a0bf55ea297f467, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -166968,7 +166972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636783044527674064, guid: fcab2e45927b68c45a0bf55ea297f467, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

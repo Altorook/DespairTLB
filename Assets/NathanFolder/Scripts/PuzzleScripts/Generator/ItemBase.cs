@@ -29,7 +29,8 @@ public class ItemBase : MonoBehaviour, IInteractable
             {
                 OpenLastDoor.Invoke();
             }
-            heldItemScript.hasItem = false;
+          //  heldItemScript.hasItem = false;
+            PlacedCore.Invoke();
         }
         
     }
