@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SGM_Reactor
+  m_Name: SGM_Exit
   m_Shader: {fileID: -6465566751694194690, guid: 78fd360b639e445a0a2766749c807618, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -25,19 +25,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Base_Color:
-        m_Texture: {fileID: 2800000, guid: 61bbc877117e54918b797086ec60831a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a7fe7a56cbb25247bc95fd301a4cb82, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Emissive:
-        m_Texture: {fileID: 2800000, guid: 3e199222c0a74435f9b61c540146d423, type: 3}
+        m_Texture: {fileID: 2800000, guid: c2df4b4d22418824994f8c8eb496cdc4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: be90f9013bcb84d5c894ae1a0698a194, type: 3}
+        m_Texture: {fileID: 2800000, guid: ffb75746f293d7148af233d9dcc08d67, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PBR:
-        m_Texture: {fileID: 2800000, guid: d2753fcf1f9564c98bc6534c692a04ac, type: 3}
+        m_Texture: {fileID: 2800000, guid: bcaf59fc3a0251a48aa1a0a6d059f7a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_47a8de5875b24cfd8b16fe22f8955f1d_Texture_1_Texture2D:

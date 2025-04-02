@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SGM_Reactor
-  m_Shader: {fileID: -6465566751694194690, guid: 78fd360b639e445a0a2766749c807618, type: 3}
+  m_Name: Test
+  m_Shader: {fileID: -6465566751694194690, guid: 24ed67ec342a39646baba95ef4a09a2d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -25,23 +25,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Base_Color:
-        m_Texture: {fileID: 2800000, guid: 61bbc877117e54918b797086ec60831a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Emissive:
-        m_Texture: {fileID: 2800000, guid: 3e199222c0a74435f9b61c540146d423, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8ad47399cc02519429b44aa2c0105efe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: be90f9013bcb84d5c894ae1a0698a194, type: 3}
+        m_Texture: {fileID: 2800000, guid: 523e145ed35b1e0469a9fc10986512fe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PBR:
-        m_Texture: {fileID: 2800000, guid: d2753fcf1f9564c98bc6534c692a04ac, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_47a8de5875b24cfd8b16fe22f8955f1d_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 14437d0a51b514f52abcf58add946435, type: 3}
+        m_Texture: {fileID: 2800000, guid: f39aaf3e8cce6b84db194c8d2e3e404d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -59,19 +51,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _AO_Value: 0
-    - _Emission: 1
-    - _Emissive_Strenght: 0.001
-    - _Height_Value: 0.521
-    - _Metallic_Value: 0.609
-    - _Pixelated_Amount: 1200
+    - _Height_Value: 0
+    - _Metallic_Value: 0
+    - _Pixelated_Amount: 1371
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Roughness_Value: 0
     m_Colors:
-    - _EmissiveColor: {r: 1023.9999, g: 0, b: 0, a: 1}
+    - _Color_Change: {r: 0.8315979, g: 0.8867924, b: 0.7152901, a: 0}
+    - _Color_Mask: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &6621456552647311996
+--- !u!114 &7468056445419238461
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

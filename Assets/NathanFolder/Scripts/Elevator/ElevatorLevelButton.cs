@@ -64,7 +64,7 @@ canInteract = true;
         OpenDesiredFloor.Invoke();
         yield return new WaitForSeconds(.2f);
         playerTransform.SetParent(null);
-        EnableAllInteraction.Invoke();
+       // EnableAllInteraction.Invoke();
     }
     // Update is called once per frame
     void Update()

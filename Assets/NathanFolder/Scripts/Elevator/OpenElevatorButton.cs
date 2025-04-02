@@ -21,6 +21,8 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
     bool isClose = true;
     bool hasBeenOpened = false;
     public UnityEvent EnableFloor;
+    public UnityEvent DisableAllInteraction;
+    public UnityEvent EnableAllInteraction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +45,7 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
     }
     IEnumerator Open()
     {
+        DisableAllInteraction.Invoke();
         opening = true;
         closing = false;
         lerpTime = 0;
@@ -52,9 +55,11 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
         lerpTime = 0;
         isOpen = true;
         isClose = false ;
+        EnableAllInteraction.Invoke();
     }
     IEnumerator Close()
     {
+        DisableAllInteraction.Invoke();
         opening = false;
         closing = true;
         lerpTime = 0;
@@ -64,6 +69,7 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
         lerpTime = 0;
         isOpen = false;
         isClose = true;
+        EnableAllInteraction.Invoke();
     }
     void ClosingProcess()
     {
