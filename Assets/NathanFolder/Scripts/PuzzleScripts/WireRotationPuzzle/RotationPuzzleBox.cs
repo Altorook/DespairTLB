@@ -15,23 +15,31 @@ public class RotationPuzzleBox : MonoBehaviour, IInteractable
     {
         if(isOpen == false)
         {
-            PuzzleCanvas.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            UIOpen.Invoke();
-            isOpen = true;
+            OpenUI();
         }
+    }
+    public void OpenUI()
+    {
+        PuzzleCanvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        UIOpen.Invoke();
+        isOpen = true;
+    }
+    public void CloseUI()
+    {
+        PuzzleCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UIOpen.Invoke();
+        isOpen = false;
     }
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && isOpen)
         {
-            PuzzleCanvas.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            UIOpen.Invoke();
-            isOpen = false;
+           CloseUI();
         }
     }
 }
