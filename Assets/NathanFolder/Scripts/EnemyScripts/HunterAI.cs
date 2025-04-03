@@ -17,6 +17,7 @@ public class HunterAI : MonoBehaviour
     public HunterState currentState;
 
     public UnityEvent KillPlayer;
+    public UnityEvent StartJumpScare;
 
     [SerializeField] SOVentStatus status;
     [SerializeField] NavMeshAgent agent;
@@ -48,6 +49,8 @@ public class HunterAI : MonoBehaviour
     public bool inAreaTwo;
 
     bool isOnKillCooldown;
+    bool isWait;
+    private Animator _anim;
 
     Vector3 StartPos;
     public void EnteredAreaTwo()
@@ -65,6 +68,7 @@ public class HunterAI : MonoBehaviour
         timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
         timeNotHunting = 0;
         StartPos = this.transform.position;
+        _anim = GetComponentInChildren<Animator>();
     }
     public void ReturnToStartPosition()
     {
@@ -83,6 +87,8 @@ public class HunterAI : MonoBehaviour
     void Patrol()
     {
         agent.speed = patrolSpeed;
+        _anim.SetBool("IsWalking", true);
+        _anim.SetBool("IsChasing", false);
         if (isOnWayToPatrolPoint == false)
         {
             if (!inAreaTwo)
@@ -107,10 +113,19 @@ public class HunterAI : MonoBehaviour
     }
     void Chase()
     {
-        agent.speed = chaseSpeed;
+        if (!isWait)
+        {
+            agent.speed = chaseSpeed;
+        }
+        else
+        {
+            agent.speed = 0;
+        }
         agent.destination = PlayerPosition.position;
         timeInHunt += Time.deltaTime;
-        if(timeInHunt >= huntDuration)
+        _anim.SetBool("IsWalking", false);
+        _anim.SetBool("IsChasing", true);
+        if (timeInHunt >= huntDuration)
         {
             
             timeInHunt = 0;
@@ -126,6 +141,7 @@ public class HunterAI : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
+        StartJumpScare.Invoke();
         AudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
         AudioManager.PlaySound(2);
@@ -158,6 +174,8 @@ public class HunterAI : MonoBehaviour
     void Idle()
     {
         agent.speed = 0;
+        _anim.SetBool("IsWalking", false);
+        _anim.SetBool("IsChasing", false);
     }
     public void FixedUpdate()
     {
@@ -184,12 +202,20 @@ public class HunterAI : MonoBehaviour
         }
         if(timeNotHunting > timeTillHunt)
         {
-            currentState = HunterState.Chase;
+            StartCoroutine(PreapareChasing());
             minTimeBeforeHunt *= percentReductionToHuntMinMax;
             maxTimeBeforeHunt *= percentReductionToHuntMinMax;
             timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
             timeNotHunting = 0;
         }
+    }
+
+    private IEnumerator PreapareChasing()
+    {
+        currentState = HunterState.Chase;
+        isWait = true;
+        yield return new WaitForSeconds(2.8f);
+        isWait = false;
     }
 
     // Update is called once per frame

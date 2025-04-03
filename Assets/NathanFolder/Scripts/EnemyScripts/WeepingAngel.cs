@@ -49,6 +49,8 @@ public class WeepingAngel : MonoBehaviour
     [SerializeField] float timeInMurder;
     [SerializeField] float timeBeforeStopMurder;
 
+    public UnityEvent StartJumpScare;
+
     bool isOnKillCooldown;
     Vector3 StartPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -140,6 +142,7 @@ public class WeepingAngel : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
+        StartJumpScare.Invoke();
         AudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
         AudioManager.PlaySound(2);

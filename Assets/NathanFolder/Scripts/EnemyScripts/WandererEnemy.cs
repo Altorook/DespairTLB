@@ -16,6 +16,7 @@ public class WandererEnemy : MonoBehaviour
     public WandererState currentState;
 
     public UnityEvent KillPlayer;
+    public UnityEvent StartJumpScare;
 
     public float timeOutOfSightBeforePatrol;
    public SOVentStatus status;
@@ -35,12 +36,14 @@ public class WandererEnemy : MonoBehaviour
     bool isOnWayToPatrolPoint;
     public bool inAreaTwo;
     bool isOnKillCooldown;
+    private Animator _anim;
 
     Vector3 StartPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartPos = this.transform.position;
+        _anim = GetComponentInChildren<Animator>();
     }
     public void ReturnToStartPosition()
     {
@@ -63,6 +66,11 @@ public class WandererEnemy : MonoBehaviour
     void Patrol()
     {
         agent.speed = patrolSpeed;
+
+        _anim.SetBool("IsPatrolling", true);
+        _anim.SetBool("IsChase", false);
+        _anim.SetBool("CanAttack", false);
+
         if(isOnWayToPatrolPoint == false)
         {
             if (!inAreaTwo)
@@ -90,7 +98,12 @@ public class WandererEnemy : MonoBehaviour
         agent.speed = chaseSpeed;
         agent.destination = PlayerPosition.position;
         timeOutOfSightBeforePatrol -= Time.deltaTime;
-        if(timeOutOfSightBeforePatrol <= 0)
+
+        _anim.SetBool("IsPatrolling", false);
+        _anim.SetBool("IsChase", true);
+        _anim.SetBool("CanAttack", false);
+
+        if (timeOutOfSightBeforePatrol <= 0)
         {
             currentState = WandererState.Patrol;
             isOnWayToPatrolPoint = false;
@@ -99,6 +112,10 @@ public class WandererEnemy : MonoBehaviour
         if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance && !status.isVented && !isOnKillCooldown)
         {
             //play kill animation
+            _anim.SetBool("IsPatrolling", false);
+            _anim.SetBool("IsChase", false);
+            _anim.SetBool("CanAttack", true);
+
             Debug.Log("UrDEad");
             StartCoroutine(DeathProcess());
             isOnKillCooldown = true;
@@ -116,9 +133,15 @@ public class WandererEnemy : MonoBehaviour
     void Idle()
     {
         agent.speed = 0;
+
+        _anim.SetBool("IsPatrolling", false);
+        _anim.SetBool("IsChase", false);
+        _anim.SetBool("CanAttack", false);
     }
     IEnumerator DeathProcess()
     {
+        yield return new WaitForSeconds(1.1f);
+        StartJumpScare.Invoke();
         AudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
         AudioManager.PlaySound(2);
