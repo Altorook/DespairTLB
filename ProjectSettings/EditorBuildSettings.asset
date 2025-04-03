@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/KyleFolder/MainMenu.unity
+    guid: 6ea1e95ead224994cb322291533f6b3e
+  - enabled: 1
+    path: Assets/KyleFolder/Kyle Scene.unity
+    guid: 02fb343457c38fc4b8669e32ed7e4ca5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

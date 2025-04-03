@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private float cameraStandingHeight;
     private float cameraCrouchingHeight;
 
-    private bool isMenuOpen;
+    public bool isMenuOpen;
     [SerializeField] float downVel;
     private void Awake()
     {
