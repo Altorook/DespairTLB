@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class HunterAI : MonoBehaviour
 {
@@ -13,6 +15,9 @@ public class HunterAI : MonoBehaviour
         Idle = 2,
     }
     public HunterState currentState;
+
+    public UnityEvent KillPlayer;
+
     [SerializeField] SOVentStatus status;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] float patrolSpeed;
@@ -34,13 +39,17 @@ public class HunterAI : MonoBehaviour
     
     [SerializeField] float minTimeBeforeHunt;
     [SerializeField] float maxTimeBeforeHunt;
-
+    
 
 
     [SerializeField] float huntDuration;
     [SerializeField] float timeInHunt;
     [SerializeField] float percentReductionToHuntMinMax;
     public bool inAreaTwo;
+
+    bool isOnKillCooldown;
+
+    Vector3 StartPos;
     public void EnteredAreaTwo()
     {
         inAreaTwo = true;
@@ -55,6 +64,21 @@ public class HunterAI : MonoBehaviour
         EnterIdle();
         timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
         timeNotHunting = 0;
+        StartPos = this.transform.position;
+    }
+    public void ReturnToStartPosition()
+    {
+        if (this.isActiveAndEnabled)
+        {
+            agent.enabled = false;
+            this.transform.position = StartPos;
+            EnterIdle();
+            timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
+            timeNotHunting = 0;
+
+            agent.enabled = true;
+        }
+        
     }
     void Patrol()
     {
@@ -92,11 +116,30 @@ public class HunterAI : MonoBehaviour
             timeInHunt = 0;
             EnterIdle();
         }
-        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented)
+        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented && !isOnKillCooldown)
         {
             //play kill animation
             Debug.Log("UrDEad");
+            StartCoroutine(DeathProcess());
+            isOnKillCooldown = true;
         }
+    }
+    IEnumerator DeathProcess()
+    {
+        AudioManager.PlaySound(0);
+        yield return new WaitForSeconds(1.4f);
+        AudioManager.PlaySound(2);
+        yield return new WaitForSeconds(1.19f);
+        AudioManager.PlaySound(3);
+        yield return new WaitForSeconds(0.45f);
+        KillPlayer.Invoke();
+        StartCoroutine(KillCooldown());
+        //SceneManager.LoadScene("SafetyBackUp");
+    }
+    IEnumerator KillCooldown()
+    {
+        yield return new WaitForSeconds(4);
+        isOnKillCooldown = false;
     }
     public void EnterIdle()
     {

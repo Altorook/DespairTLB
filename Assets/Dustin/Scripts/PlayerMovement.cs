@@ -32,13 +32,16 @@ public class PlayerMovement : MonoBehaviour
     private float cameraStandingHeight;
     private float cameraCrouchingHeight;
 
+    [SerializeField] SOVentStatus status;
+
     private bool isMenuOpen;
     [SerializeField] float downVel;
+    Vector3 StartPos;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
-        
+        StartPos = transform.position;
         // Ensures the camera is properly assigned
         playerCamera = Camera.main;
         if (playerCamera == null)
@@ -66,7 +69,12 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
+    public void ReturnToStartPosition()
+    {
+        controller.enabled = false;
+        transform.position = StartPos;
+        controller.enabled = true;
+    }
     private void Update()
     {
         if(isMenuOpen == false)
@@ -104,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move((transform.right * move.x + transform.forward * move.z + transform.up * -downVel) * targetSpeed * Time.deltaTime);
 
-        if (crouchAction.WasPressedThisFrame())
+        if (crouchAction.WasPressedThisFrame() && !status.isVented)
         {
             isCrouching = !isCrouching;
             float crouchOffset = ((-crouchHeight) / 2);

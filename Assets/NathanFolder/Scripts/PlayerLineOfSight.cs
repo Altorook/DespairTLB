@@ -50,7 +50,7 @@ public class PlayerLineOfSight : MonoBehaviour
             {
                 soSanity.isLookingAtEnemy = false;
                 //   Debug.Log(hit.transform.gameObject.name);
-                Debug.Log("CanMove");
+              //  Debug.Log("CanMove");
             }
             else
             {
@@ -63,7 +63,7 @@ public class PlayerLineOfSight : MonoBehaviour
             {
                 isEnemyLookedAt = false;
                 //   Debug.Log(hit.transform.gameObject.name);
-                Debug.Log("CanMove");
+               // Debug.Log("CanMove");
             }
             else
             {

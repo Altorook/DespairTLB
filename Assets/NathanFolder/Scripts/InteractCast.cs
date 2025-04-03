@@ -46,12 +46,12 @@ public class InteractCast : MonoBehaviour
                     {
                    // if (!Physics.Raycast(ray.origin, ray.direction, out hit, Vector3.Distance(hit.transform.position, this.transform.position), ~layerMaskWPlayer.value))
                   //  {
-                        interactText.SetActive(true); CrossHair.SetActive(true);
+                        interactText.SetActive(true); //CrossHair.SetActive(true);
                   //  }                    
                     }
                     else
                     {
-                        interactText.SetActive(false); CrossHair.SetActive(false);
+                        interactText.SetActive(false); //CrossHair.SetActive(false);
                     }
                 }
             

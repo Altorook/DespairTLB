@@ -44,21 +44,25 @@ public class WandererSightlineScript : MonoBehaviour
         // Debug.Log("Looking At " + other.gameObject.name);
         RaycastHit hit;
         Debug.DrawRay(ViewOrigin.position, other.transform.position - ViewOrigin.position);
-        if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
-        {
-            isPlayerLookedAt = false;
+        Debug.Log("WTF");
+
+            if (Physics.Raycast(ViewOrigin.position, other.transform.position - ViewOrigin.position, out hit, Vector3.Distance(ViewOrigin.position, other.transform.position), ~layerMask.value))
+            {
+                isPlayerLookedAt = false;
+            Debug.Log("Why here");
             //   Debug.Log(hit.transform.gameObject.name);
-            Debug.Log("CanMove");
+            // Debug.Log("CanMove");
         }
-        else if(WandererEnemy.status.isVented == false)
-        {
+            else if (WandererEnemy.status.isVented == false)
+            {
+            Debug.Log("Plz here");
             isPlayerLookedAt = true;
-            WandererEnemy.timeOutOfSightBeforePatrol = timeToLoseEnemy;
-            WandererEnemy.currentState = WandererEnemy.WandererState.Chase;
-        }
+                WandererEnemy.timeOutOfSightBeforePatrol = timeToLoseEnemy;
+                WandererEnemy.currentState = WandererEnemy.WandererState.Chase;
+            }
     }
     public void OnTriggerExit(Collider other)
     {
-        isPlayerLookedAt = false;
+            isPlayerLookedAt = false;
     }
 }
