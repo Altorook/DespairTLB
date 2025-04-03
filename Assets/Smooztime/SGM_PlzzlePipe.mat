@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RustedMetal_Material
-  m_Shader: {fileID: -6465566751694194690, guid: e1fc21257c0a2fb499118aff97be29d8, type: 3}
+  m_Name: SGM_PlzzlePipe
+  m_Shader: {fileID: -6465566751694194690, guid: 53d342aed81394c87a282e63663df1fe, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -46,13 +46,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Metallic: 0.28
     - _Pixelated_Amount: 1000
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Smoothness: 5.61
+    m_Colors:
+    - _PipeColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3833202817354627122
+--- !u!114 &1104804209336655167
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

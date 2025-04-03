@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RustedMetal_Material
-  m_Shader: {fileID: -6465566751694194690, guid: e1fc21257c0a2fb499118aff97be29d8, type: 3}
+  m_Name: SGM_Exit
+  m_Shader: {fileID: -6465566751694194690, guid: 78fd360b639e445a0a2766749c807618, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,12 +24,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_fa39bdfe8a744704bd7298a60b9ef255_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 04d1c2a065ca38345aae6a6bd42ff649, type: 3}
+    - _Base_Color:
+        m_Texture: {fileID: 2800000, guid: 0a7fe7a56cbb25247bc95fd301a4cb82, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_fa614c3199f3436897b808c3ad97cb17_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 27518e8ee6b69a1488da559c4c6c154a, type: 3}
+    - _Emissive:
+        m_Texture: {fileID: 2800000, guid: c2df4b4d22418824994f8c8eb496cdc4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: ffb75746f293d7148af233d9dcc08d67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PBR:
+        m_Texture: {fileID: 2800000, guid: bcaf59fc3a0251a48aa1a0a6d059f7a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_47a8de5875b24cfd8b16fe22f8955f1d_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 14437d0a51b514f52abcf58add946435, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -46,13 +58,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Pixelated_Amount: 1000
+    - _AO_Value: 0
+    - _Emission: 1
+    - _Emissive_Strenght: 0.001
+    - _Height_Value: 0.521
+    - _Metallic_Value: 0.609
+    - _Pixelated_Amount: 1200
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _Roughness_Value: 0
+    m_Colors:
+    - _EmissiveColor: {r: 1023.9999, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3833202817354627122
+--- !u!114 &6621456552647311996
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

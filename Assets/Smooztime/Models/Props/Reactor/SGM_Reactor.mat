@@ -68,7 +68,7 @@ Material:
     - _QueueOffset: 0
     - _Roughness_Value: 0
     m_Colors:
-    - _EmissiveColor: {r: 1023.9999, g: 457.37354, b: 0, a: 1}
+    - _EmissiveColor: {r: 1023.9999, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6621456552647311996
