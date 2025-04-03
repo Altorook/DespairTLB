@@ -34,7 +34,7 @@ ModelImporter:
       name: Wanderer_Attack
       takeName: rig|rigAction
       internalID: 3374748389425109202
-      firstFrame: 0
+      firstFrame: 15
       lastFrame: 61
       wrapMode: 0
       orientationOffsetY: 0

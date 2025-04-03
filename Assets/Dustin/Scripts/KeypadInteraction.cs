@@ -27,6 +27,7 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
     {
         if (!isUsingKeypad)
         {
+            OpenedComputer.Invoke();
             isUsingKeypad = true;
             mainCamera.gameObject.SetActive(false);
             keypadCamera.gameObject.SetActive(true);
@@ -36,7 +37,7 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
             {
                 player.SendMessage("ToggleMenuState");
             }
-            OpenedComputer.Invoke();
+            
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }

@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class HunterAI : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class HunterAI : MonoBehaviour
         Idle = 2,
     }
     public HunterState currentState;
+
+    public UnityEvent KillPlayer;
+    public UnityEvent StartJumpScare;
+
     [SerializeField] SOVentStatus status;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] float patrolSpeed;
@@ -34,13 +40,19 @@ public class HunterAI : MonoBehaviour
     
     [SerializeField] float minTimeBeforeHunt;
     [SerializeField] float maxTimeBeforeHunt;
-
+    
 
 
     [SerializeField] float huntDuration;
     [SerializeField] float timeInHunt;
     [SerializeField] float percentReductionToHuntMinMax;
     public bool inAreaTwo;
+
+    bool isOnKillCooldown;
+    bool isWait;
+    private Animator _anim;
+
+    Vector3 StartPos;
     public void EnteredAreaTwo()
     {
         inAreaTwo = true;
@@ -55,10 +67,28 @@ public class HunterAI : MonoBehaviour
         EnterIdle();
         timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
         timeNotHunting = 0;
+        StartPos = this.transform.position;
+        _anim = GetComponentInChildren<Animator>();
+    }
+    public void ReturnToStartPosition()
+    {
+        if (this.isActiveAndEnabled)
+        {
+            agent.enabled = false;
+            this.transform.position = StartPos;
+            EnterIdle();
+            timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
+            timeNotHunting = 0;
+
+            agent.enabled = true;
+        }
+        
     }
     void Patrol()
     {
         agent.speed = patrolSpeed;
+        _anim.SetBool("IsWalking", true);
+        _anim.SetBool("IsChasing", false);
         if (isOnWayToPatrolPoint == false)
         {
             if (!inAreaTwo)
@@ -83,20 +113,49 @@ public class HunterAI : MonoBehaviour
     }
     void Chase()
     {
-        agent.speed = chaseSpeed;
+        if (!isWait)
+        {
+            agent.speed = chaseSpeed;
+        }
+        else
+        {
+            agent.speed = 0;
+        }
         agent.destination = PlayerPosition.position;
         timeInHunt += Time.deltaTime;
-        if(timeInHunt >= huntDuration)
+        _anim.SetBool("IsWalking", false);
+        _anim.SetBool("IsChasing", true);
+        if (timeInHunt >= huntDuration)
         {
             
             timeInHunt = 0;
             EnterIdle();
         }
-        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented)
+        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented && !isOnKillCooldown)
         {
             //play kill animation
             Debug.Log("UrDEad");
+            StartCoroutine(DeathProcess());
+            isOnKillCooldown = true;
         }
+    }
+    IEnumerator DeathProcess()
+    {
+        StartJumpScare.Invoke();
+        AudioManager.PlaySound(0);
+        yield return new WaitForSeconds(1.4f);
+        AudioManager.PlaySound(2);
+        yield return new WaitForSeconds(1.19f);
+        AudioManager.PlaySound(3);
+        yield return new WaitForSeconds(0.45f);
+        KillPlayer.Invoke();
+        StartCoroutine(KillCooldown());
+        //SceneManager.LoadScene("SafetyBackUp");
+    }
+    IEnumerator KillCooldown()
+    {
+        yield return new WaitForSeconds(4);
+        isOnKillCooldown = false;
     }
     public void EnterIdle()
     {
@@ -115,6 +174,8 @@ public class HunterAI : MonoBehaviour
     void Idle()
     {
         agent.speed = 0;
+        _anim.SetBool("IsWalking", false);
+        _anim.SetBool("IsChasing", false);
     }
     public void FixedUpdate()
     {
@@ -141,12 +202,20 @@ public class HunterAI : MonoBehaviour
         }
         if(timeNotHunting > timeTillHunt)
         {
-            currentState = HunterState.Chase;
+            StartCoroutine(PreapareChasing());
             minTimeBeforeHunt *= percentReductionToHuntMinMax;
             maxTimeBeforeHunt *= percentReductionToHuntMinMax;
             timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
             timeNotHunting = 0;
         }
+    }
+
+    private IEnumerator PreapareChasing()
+    {
+        currentState = HunterState.Chase;
+        isWait = true;
+        yield return new WaitForSeconds(2.8f);
+        isWait = false;
     }
 
     // Update is called once per frame

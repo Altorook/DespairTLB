@@ -1,12 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ItemBase : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject[] ReactorCores;
-    [SerializeField] GameObject[] lightsForCores;
+    [SerializeField] Material[] lightOnBase;
+    [SerializeField] MeshRenderer[] lightRenderer;
+
+    [SerializeField] HeldItem heldItemScript;
+
     int numOfPlacedCores = 0;
     public UnityEvent OpenLastDoor;
+    public UnityEvent PlacedCore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,13 +20,19 @@ public class ItemBase : MonoBehaviour, IInteractable
     }
     public void InteractedWith()
     {
-        ReactorCores[numOfPlacedCores].SetActive(true);
-        //lightsForCores[numOfPlacedCores].colorify;
-        numOfPlacedCores++;
-        if(numOfPlacedCores >= 3)
+        if (heldItemScript.hasItem)
         {
-            OpenLastDoor.Invoke();
+            ReactorCores[numOfPlacedCores].SetActive(true);
+            lightRenderer[numOfPlacedCores].material = lightOnBase[numOfPlacedCores];
+            numOfPlacedCores++;
+            if (numOfPlacedCores >= 3)
+            {
+                OpenLastDoor.Invoke();
+            }
+          //  heldItemScript.hasItem = false;
+            PlacedCore.Invoke();
         }
+        
     }
     // Update is called once per frame
     void Update()

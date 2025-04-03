@@ -12,11 +12,12 @@ public class HeldItem : MonoBehaviour
     public void PickupItem()
     {
         reactorItem.SetActive(true);
-       
+       hasItem = true;
     }
     public void PlaceItem()
     {
         reactorItem.SetActive(false);
+        hasItem = false;
     }
     // Update is called once per frame
     void Update()

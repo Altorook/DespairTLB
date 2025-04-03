@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using static WeepingAngel;
 
 public class WandererEnemy : MonoBehaviour
@@ -12,6 +14,9 @@ public class WandererEnemy : MonoBehaviour
         Idle = 2,
     }
     public WandererState currentState;
+
+    public UnityEvent KillPlayer;
+    public UnityEvent StartJumpScare;
 
     public float timeOutOfSightBeforePatrol;
    public SOVentStatus status;
@@ -30,10 +35,25 @@ public class WandererEnemy : MonoBehaviour
     [SerializeField] Transform PlayerPosition;
     bool isOnWayToPatrolPoint;
     public bool inAreaTwo;
+    bool isOnKillCooldown;
+    private Animator _anim;
+
+    Vector3 StartPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartPos = this.transform.position;
+        _anim = GetComponentInChildren<Animator>();
+    }
+    public void ReturnToStartPosition()
+    {
+        if (this.isActiveAndEnabled)
+        {
+            agent.enabled = false;
+            this.transform.position = StartPos;
+            currentState = WandererState.Idle;
+            agent.enabled = true;
+        }
     }
     public void EnteredAreaTwo()
     {
@@ -46,6 +66,11 @@ public class WandererEnemy : MonoBehaviour
     void Patrol()
     {
         agent.speed = patrolSpeed;
+
+        _anim.SetBool("IsPatrolling", true);
+        _anim.SetBool("IsChase", false);
+        _anim.SetBool("CanAttack", false);
+
         if(isOnWayToPatrolPoint == false)
         {
             if (!inAreaTwo)
@@ -73,16 +98,27 @@ public class WandererEnemy : MonoBehaviour
         agent.speed = chaseSpeed;
         agent.destination = PlayerPosition.position;
         timeOutOfSightBeforePatrol -= Time.deltaTime;
-        if(timeOutOfSightBeforePatrol <= 0)
+
+        _anim.SetBool("IsPatrolling", false);
+        _anim.SetBool("IsChase", true);
+        _anim.SetBool("CanAttack", false);
+
+        if (timeOutOfSightBeforePatrol <= 0)
         {
             currentState = WandererState.Patrol;
             isOnWayToPatrolPoint = false;
         }
         //need to decide if the wanderer can kill in vents
-        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance)
+        if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance && !status.isVented && !isOnKillCooldown)
         {
             //play kill animation
+            _anim.SetBool("IsPatrolling", false);
+            _anim.SetBool("IsChase", false);
+            _anim.SetBool("CanAttack", true);
+
             Debug.Log("UrDEad");
+            StartCoroutine(DeathProcess());
+            isOnKillCooldown = true;
         }
     }
     IEnumerator RandomIdleDuration()
@@ -97,6 +133,29 @@ public class WandererEnemy : MonoBehaviour
     void Idle()
     {
         agent.speed = 0;
+
+        _anim.SetBool("IsPatrolling", false);
+        _anim.SetBool("IsChase", false);
+        _anim.SetBool("CanAttack", false);
+    }
+    IEnumerator DeathProcess()
+    {
+        yield return new WaitForSeconds(1.1f);
+        StartJumpScare.Invoke();
+        AudioManager.PlaySound(0);
+        yield return new WaitForSeconds(1.4f);
+        AudioManager.PlaySound(2);
+        yield return new WaitForSeconds(1.19f);
+        AudioManager.PlaySound(3);
+        yield return new WaitForSeconds(0.45f);
+        KillPlayer.Invoke();
+        StartCoroutine(KillCooldown());
+        // SceneManager.LoadScene("SafetyBackUp");
+    }
+    IEnumerator KillCooldown()
+    {
+        yield return new WaitForSeconds(4);
+        isOnKillCooldown = false;
     }
     public void FixedUpdate()
     {

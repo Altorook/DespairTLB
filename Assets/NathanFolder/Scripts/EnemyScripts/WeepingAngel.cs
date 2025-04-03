@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class WeepingAngel : MonoBehaviour
@@ -14,6 +15,9 @@ public class WeepingAngel : MonoBehaviour
     }
     public WeepingState currentState = 0;
     private WeepingState lastStateBeforeLookedAt;
+
+    public UnityEvent KillPlayer;
+
     private float freezeMult = 1;
     private Animator _anim;
     [SerializeField] NavMeshAgent weepAi;
@@ -44,6 +48,11 @@ public class WeepingAngel : MonoBehaviour
 
     [SerializeField] float timeInMurder;
     [SerializeField] float timeBeforeStopMurder;
+
+    public UnityEvent StartJumpScare;
+
+    bool isOnKillCooldown;
+    Vector3 StartPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,6 +61,23 @@ public class WeepingAngel : MonoBehaviour
         resetMinTime = minTimeToChange;
         resetProb  = murderProbability;
         _anim = GetComponentInChildren<Animator>();
+        StartPos = this.transform.position;
+    }
+    public void ReturnToStartPosition()
+    {
+        if (this.isActiveAndEnabled)
+        {
+            weepAi.enabled = false;
+            murderProbability = resetProb;
+            maxTimeToChange = resetMaxTime;
+            minTimeToChange = resetMinTime;
+            NewHideState();
+            stateReturnTimer = 0;
+            currentState = WeepingState.HideFromPlayer;
+            timeInMurder = 0;
+            this.transform.position = StartPos;
+            weepAi.enabled = true;
+        }
     }
     void NewHideState()
     {
@@ -116,13 +142,21 @@ public class WeepingAngel : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
+        StartJumpScare.Invoke();
         AudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
         AudioManager.PlaySound(2);
         yield return new WaitForSeconds(1.19f);
         AudioManager.PlaySound(3);
         yield return new WaitForSeconds(0.45f);
-        SceneManager.LoadScene("Kyle Scene");
+        KillPlayer.Invoke();
+        StartCoroutine(KillCooldown());
+        // SceneManager.LoadScene("SafetyBackUp");
+    }
+    IEnumerator KillCooldown()
+    {
+        yield return new WaitForSeconds(4);
+        isOnKillCooldown = false;
     }
     private void Murder()
     {
@@ -144,10 +178,11 @@ public class WeepingAngel : MonoBehaviour
 
         weepAi.speed = speed;
         weepAi.destination = playerPos.position;
-        if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance && !status.isVented){
+        if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance && !status.isVented && !isOnKillCooldown){
             Debug.Log("UrDEad");
             NewHideState();
             StartCoroutine(DeathProcess());
+            isOnKillCooldown = true;
         }
 
         _anim.SetBool("IsRunning", true);
