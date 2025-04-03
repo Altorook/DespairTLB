@@ -16,6 +16,10 @@ public class GeneratorInteract : MonoBehaviour, IInteractable
     {
         if (!hasBeenOpened && !heldItemScript.hasItem)
         {
+            AudioManager.PlaySound(5);
+            this.transform.parent.transform.GetChild(4).gameObject.GetComponent<AudioSource>().loop = false;
+            this.transform.parent.transform.GetChild(4).gameObject.GetComponent<AudioSource>().Stop();
+
             reactorOnGenerator.SetActive(false);
             standardWire.SetActive(false);
             brokenWire.SetActive(true);

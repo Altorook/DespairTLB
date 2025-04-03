@@ -7,6 +7,7 @@ public class PuzzleDoor : MonoBehaviour
     [SerializeField] float amountToOpen;
     [SerializeField]
     float openSpeed;
+    bool hasPlayedSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +15,11 @@ public class PuzzleDoor : MonoBehaviour
     }
     public void OpenDoor()
     {
-
+        if (!hasPlayedSound)
+        {
+            AudioManager.PlaySound(6);
+            hasPlayedSound = true;
+        }
         if (amountOpen < amountToOpen)
         {
             amountOpen += openSpeed;

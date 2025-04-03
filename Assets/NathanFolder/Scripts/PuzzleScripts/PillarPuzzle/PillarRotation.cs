@@ -23,6 +23,7 @@ public class PillarRotation : MonoBehaviour, IInteractable
     }
     public void InteractedWith()
     {
+        AudioManager.PlaySound(9);
         currentRotation++;
         if(currentRotation > 3)
         {

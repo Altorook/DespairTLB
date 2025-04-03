@@ -45,7 +45,7 @@ canInteract = true;
     }
     IEnumerator WaitForElevator()
     {
-        //play elevator noise
+        AudioManager.PlaySound(4);
         yield return new WaitForSeconds(7);
         Debug.Log("Attempt Teleport");
         // playerTransform.position = LevelOfButton.transform.position;
@@ -61,6 +61,7 @@ canInteract = true;
         playerTransform.gameObject.GetComponent<CharacterController>().enabled = false;
         playerTransform.SetLocalPositionAndRotation(parentRelativePos, parentRelativeRot);
         playerTransform.gameObject.GetComponent<CharacterController>().enabled = true;
+        AudioManager.StopSound(4);
         OpenDesiredFloor.Invoke();
         yield return new WaitForSeconds(.2f);
         playerTransform.SetParent(null);

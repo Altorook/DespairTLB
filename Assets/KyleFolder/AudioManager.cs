@@ -24,4 +24,8 @@ public class AudioManager : MonoBehaviour
     {
         Instance.SFXSource.PlayOneShot(Instance.audioList[sound]);
     }
+    public static void StopSound(int sound)
+    {
+        Instance.SFXSource.Stop();
+    }
 }

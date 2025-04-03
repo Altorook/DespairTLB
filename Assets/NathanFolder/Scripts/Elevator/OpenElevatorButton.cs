@@ -45,6 +45,8 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
     }
     IEnumerator Open()
     {
+        AudioManager.PlaySound(2);
+        AudioManager.PlaySound(3);
         DisableAllInteraction.Invoke();
         opening = true;
         closing = false;
@@ -59,6 +61,7 @@ public class OpenElevatorButton : MonoBehaviour, IInteractable
     }
     IEnumerator Close()
     {
+        AudioManager.PlaySound(2);
         DisableAllInteraction.Invoke();
         opening = false;
         closing = true;

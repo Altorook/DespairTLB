@@ -379,6 +379,7 @@ public class RotationPuzzle : MonoBehaviour
     {
         if(isCompleted == false)
         {
+            AudioManager.PlaySound(5);
             background.sprite = completedSprite;
             PuzzleCompleted.Invoke();
             isCompleted = true;

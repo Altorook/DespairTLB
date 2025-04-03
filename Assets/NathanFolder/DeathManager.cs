@@ -27,6 +27,7 @@ public class DeathManager : MonoBehaviour
     }
     IEnumerator LifeScreen()
     {
+        AudioManager.PlaySound(8);
         if (lives > 0)
         {
             LivesText.gameObject.SetActive(true);

@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private float cameraStandingHeight;
     private float cameraCrouchingHeight;
 
+    [SerializeField] SOVentStatus status;
     public bool isMenuOpen;
     [SerializeField] float downVel;
     Vector3 StartPos;

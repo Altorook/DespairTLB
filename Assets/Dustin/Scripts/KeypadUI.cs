@@ -83,12 +83,14 @@ public class KeyPadUI : MonoBehaviour
         {
             feedbackText.text = "Access Granted. Door Unlocked.";
             PasswordCorrect.Invoke();
+            AudioManager.PlaySound(0);
             //AudioManager.PlaySound(5);
             //Debug.Log("[Keypad] Correct code entered.");
         }
         else
         {
             feedbackText.text = "Incorect Code!";
+            AudioManager.PlaySound(1);
             //Debug.Log("[Keypad] Incorrect code.");
         }
 
