@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-6942005850280692717
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WandererFootstep3SFX_{-6942005850280692717}
+  m_AudioClip: {fileID: 8300000, guid: 89f88771d96cc7d4ba4d5d8d0bd935b3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6729009075218919532
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WandererFootstep2SFX_{-6729009075218919532}
+  m_AudioClip: {fileID: 8300000, guid: 56cd175232a1add458af5fa3118cfabd, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-760832199763840105
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WandererFootstep4SFX_{-760832199763840105}
+  m_AudioClip: {fileID: 8300000, guid: 6971a0b46db92704f8535f93e44de0ef, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3696431082334371106
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WandererFootstep5SFX_{3696431082334371106}
+  m_AudioClip: {fileID: 8300000, guid: 13db9215ee7deab4c84f197a5a8e39f1, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WanderFootsteps
+  m_Volume: -15.8
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 7208326615377598871}
+  - {fileID: -6729009075218919532}
+  - {fileID: -6942005850280692717}
+  - {fileID: -760832199763840105}
+  - {fileID: 3696431082334371106}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7208326615377598871
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WandererFootstep1SFX_{7208326615377598871}
+  m_AudioClip: {fileID: 8300000, guid: 077161a5bba6efb4db678f33d3f9d743, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

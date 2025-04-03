@@ -1,33 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1233149941 &-4483646654211634960
+--- !u!1233149941 &-7683329744706525260
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect5_{-4483646654211634960}
-  m_AudioClip: {fileID: 8300000, guid: 352f70c59fa9ffe47aa82012b8cbb8ea, type: 3}
+  m_Name: PlayerFootStep6SFX_{-7683329744706525260}
+  m_AudioClip: {fileID: 8300000, guid: 677789aa7545e9a4f93fb02731a86252, type: 3}
   m_Volume: 0
   m_Enabled: 1
---- !u!1233149941 &3144266672660771102
+--- !u!1233149941 &-7560612736653501929
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect6_{3144266672660771102}
-  m_AudioClip: {fileID: 8300000, guid: d4f49cbd60a39434992f9a2fc3ddcddf, type: 3}
+  m_Name: PlayerFootStep5SFX_{-7560612736653501929}
+  m_AudioClip: {fileID: 8300000, guid: 21023231fd8fccb43a0e7611e8aca2b5, type: 3}
   m_Volume: 0
   m_Enabled: 1
---- !u!1233149941 &4107270272286042046
+--- !u!1233149941 &-4375079094511304005
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect4_{4107270272286042046}
-  m_AudioClip: {fileID: 8300000, guid: dd1261d4714bd534781d267cd68cc9cb, type: 3}
+  m_Name: PlayerFootStep2SFX_{-4375079094511304005}
+  m_AudioClip: {fileID: 8300000, guid: 3d1799a6c9836ba469a1a8b88492af25, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1693958332857603373
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerFootStep3SFX_{-1693958332857603373}
+  m_AudioClip: {fileID: 8300000, guid: c0947c9c92d454c408ad35c4ff573325, type: 3}
   m_Volume: 0
   m_Enabled: 1
 --- !u!1307931743 &6418180475301049370
@@ -36,7 +46,7 @@ AudioRandomContainer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FootSteps
+  m_Name: PlayerFootSteps
   m_Volume: -15.8
   m_Pitch: 0
   m_AutomaticTriggerTime: 0
@@ -46,12 +56,12 @@ AudioRandomContainer:
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: 0, y: 0}
   m_Elements:
-  - {fileID: 8103798153130181807}
-  - {fileID: 8339557902274310463}
-  - {fileID: 7577428153872419395}
-  - {fileID: 4107270272286042046}
-  - {fileID: -4483646654211634960}
-  - {fileID: 3144266672660771102}
+  - {fileID: 9058503408196255464}
+  - {fileID: -4375079094511304005}
+  - {fileID: -1693958332857603373}
+  - {fileID: 8362692825906593199}
+  - {fileID: -7560612736653501929}
+  - {fileID: -7683329744706525260}
   m_AvoidRepeatingLast: 0
   m_PlaybackMode: 2
   m_TriggerMode: 1
@@ -61,33 +71,23 @@ AudioRandomContainer:
   m_PitchRandomizationEnabled: 0
   m_AutomaticTriggerTimeRandomizationEnabled: 0
   m_LoopCountRandomizationEnabled: 0
---- !u!1233149941 &7577428153872419395
+--- !u!1233149941 &8362692825906593199
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect3_{7577428153872419395}
-  m_AudioClip: {fileID: 8300000, guid: ecef300a32607fe4da417ec9d9036e1f, type: 3}
+  m_Name: PlayerFootStep4SFX_{8362692825906593199}
+  m_AudioClip: {fileID: 8300000, guid: 50d11e7134a03a144bc0fb9d79b77269, type: 3}
   m_Volume: 0
   m_Enabled: 1
---- !u!1233149941 &8103798153130181807
+--- !u!1233149941 &9058503408196255464
 AudioContainerElement:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect1_{8103798153130181807}
-  m_AudioClip: {fileID: 8300000, guid: e95b73074792cf64a8c453002539b201, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
---- !u!1233149941 &8339557902274310463
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DespairFootStep_SoundEffect2_{8339557902274310463}
-  m_AudioClip: {fileID: 8300000, guid: c0f8cedf6191c834e826144deff94dd3, type: 3}
+  m_Name: PlayerFootStep1SFX_{9058503408196255464}
+  m_AudioClip: {fileID: 8300000, guid: 0270c6233d8df8842925c1f2ff60b4ec, type: 3}
   m_Volume: 0
   m_Enabled: 1
