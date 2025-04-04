@@ -53,6 +53,7 @@ public class WandererEnemy : MonoBehaviour
         this.transform.position = StartPos;
         currentState = WandererState.Idle;
         agent.enabled = true;
+        StartCoroutine(RandomIdleDuration());
     }
         public void ReturnToStartPosition()
     {
