@@ -147,6 +147,10 @@ public class WeepingAngel : MonoBehaviour
         freezeMult = 0;
         weepAi.speed = 0;
         _anim.SetBool("IsRunning", false);
+        if (status.isVented)
+        {
+            timeInMurder += Time.deltaTime;
+        }
     }
     IEnumerator DeathProcess()
     {

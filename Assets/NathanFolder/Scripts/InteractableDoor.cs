@@ -30,7 +30,7 @@ public class InteractableDoor : MonoBehaviour, IInteractable
     public void OpenDoor()
     {
         
-        if(amountOpen < amountToOpen)
+        if(Mathf.Abs(amountOpen) < Mathf.Abs(amountToOpen))
         {
             amountOpen += openSpeed;
             this.transform.Rotate(new Vector3(0, 0, openSpeed));

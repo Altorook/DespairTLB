@@ -41,7 +41,7 @@ public class KeypadManager : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                digitHints[i].SetText(((i+1).ToString()) +" - "+ correctCode[i].ToString());
+                digitHints[i].SetText(((i+1).ToString()) +". "+ correctCode[i].ToString());
             }
         }
     }
