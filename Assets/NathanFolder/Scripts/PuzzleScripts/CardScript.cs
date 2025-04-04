@@ -50,16 +50,20 @@ public class CardScript : MonoBehaviour, IInteractable
 
         }
     }
+    public void CloseCard()
+    {
+        cardCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UIOpen.Invoke();
+        isOpen = false;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
         {
-            cardCanvas.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            UIOpen.Invoke();
-            isOpen = false;
+           CloseCard();
         }
     }
 }
