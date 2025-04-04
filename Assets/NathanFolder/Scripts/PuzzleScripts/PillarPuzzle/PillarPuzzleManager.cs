@@ -6,6 +6,7 @@ public class PillarPuzzleManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     bool[] lightsSolved = new bool[3];
     [SerializeField] Light[] lights;
+    [SerializeField] PuzLightManager[] lightManager;
     public UnityEvent PuzzleFinished;
     void Start()
     {
@@ -14,20 +15,22 @@ public class PillarPuzzleManager : MonoBehaviour
     public void NewPillarSolved(int indexRGB)
     {
         lightsSolved[indexRGB] = true;
-        if (lightsSolved[indexRGB])
+       /* if (lightsSolved[indexRGB])
         {
             lights[indexRGB].color = new Color(0,255,0);
-        }
+        }*/
+        lightManager[indexRGB].EnabledMaterial();
        
         AreAllSolved();
     }
     public void PillarLost(int indexRGB)
     {
         lightsSolved[indexRGB] = false;
-        if (!lightsSolved[indexRGB])
+        /*if (!lightsSolved[indexRGB])
         {
             lights[indexRGB].color = new Color(255, 0, 0);
-        }
+        }*/
+        lightManager[indexRGB].DisabledMaterial();
         AreAllSolved();
     }
     private void AreAllSolved()
