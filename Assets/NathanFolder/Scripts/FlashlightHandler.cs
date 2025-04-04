@@ -24,6 +24,7 @@ public class FlashlightHandler : MonoBehaviour
     {
         flashlightIsOn = !flashlightIsOn;
         soSanity.isFlashLight = flashlightIsOn;
+
     }
     // Update is called once per frame
     void Update()
@@ -51,7 +52,8 @@ public class FlashlightHandler : MonoBehaviour
     public void CollectedBattery()
     {
         currentFlashlightCharge += batteryChargeValue;
-        if(currentFlashlightCharge > MaxFlashlightCharge)
+        ChargeDisplay.value = (currentFlashlightCharge / MaxFlashlightCharge);
+        if (currentFlashlightCharge > MaxFlashlightCharge)
         {
             currentFlashlightCharge = MaxFlashlightCharge;
         }
