@@ -128,7 +128,15 @@ public class HunterAI : MonoBehaviour
             agent.speed = 0;
         }
         agent.destination = PlayerPosition.position;
-        timeInHunt += Time.deltaTime;
+        if(status.isVented)
+        {
+            timeInHunt += Time.deltaTime * 2.5f;
+        }
+        else
+        {
+            timeInHunt += Time.deltaTime;
+        }
+       
         _anim.SetBool("IsWalking", false);
         _anim.SetBool("IsChasing", true);
         if (timeInHunt >= huntDuration)
