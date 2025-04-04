@@ -51,7 +51,7 @@ public class KeypadInteraction : MonoBehaviour, IInteractable
         }
     }
 
-    private void ExitKeypad()
+    public void ExitKeypad()
     {
         isUsingKeypad = false;
         mainCamera.gameObject.SetActive(true);
