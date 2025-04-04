@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -68,11 +69,19 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    public void ReturnToStartPosition()
+    IEnumerator DelayForScare()
     {
+        yield return new WaitForSeconds(3f);
         controller.enabled = false;
         transform.position = StartPos;
         controller.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isMenuOpen= false;
+    }
+    public void ReturnToStartPosition()
+    {
+        StartCoroutine(DelayForScare());
     }
     private void Update()
     {
@@ -82,6 +91,10 @@ public class PlayerMovement : MonoBehaviour
             HandleStamina();
             HandleLook();
             HandleCursor();
+        }
+        else
+        {
+            PlayerAudioManager.StopWalkingSound();
         }
       
     }

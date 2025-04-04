@@ -27,14 +27,17 @@ public class DeathManager : MonoBehaviour
     }
     IEnumerator LifeScreen()
     {
-        AudioManager.PlaySound(8);
+       
         if (lives > 0)
         {
+            lifeLost.Invoke();
+            yield return new WaitForSeconds(2.2f);
+            AudioManager.PlaySound(8);
             LivesText.gameObject.SetActive(true);
             LivesBackground.gameObject.SetActive(true);
             LivesBackground.color = new Color(LivesBackground.color.r, LivesBackground.color.g, LivesBackground.color.b,1);
             lives--;
-            lifeLost.Invoke();
+            
             if(lives == 2)
             {
                 LivesText.SetText("Three Lives Remain");
@@ -106,9 +109,6 @@ public class DeathManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            PlayerDied();
-        }
+        
     }
 }
