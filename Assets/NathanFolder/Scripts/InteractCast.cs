@@ -20,7 +20,7 @@ public class InteractCast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             CastTheRay();
         }
