@@ -69,6 +69,7 @@ public class HunterAI : MonoBehaviour
         timeNotHunting = 0;
         StartPos = this.transform.position;
         _anim = GetComponentInChildren<Animator>();
+        HunterAudioManager.PlayMusic(1);
     }
     public void ReturnToStartPosition()
     {
@@ -130,6 +131,7 @@ public class HunterAI : MonoBehaviour
             
             timeInHunt = 0;
             EnterIdle();
+            HunterAudioManager.PlayMusic(1);
         }
         if (Vector3.Distance(PlayerPosition.position, this.transform.position) <= killDistance &&!status.isVented && !isOnKillCooldown)
         {
@@ -142,11 +144,9 @@ public class HunterAI : MonoBehaviour
     IEnumerator DeathProcess()
     {
         StartJumpScare.Invoke();
-        AudioManager.PlaySound(0);
+        HunterAudioManager.PlaySound(0);    
         yield return new WaitForSeconds(1.4f);
-        AudioManager.PlaySound(2);
         yield return new WaitForSeconds(1.19f);
-        AudioManager.PlaySound(3);
         yield return new WaitForSeconds(0.45f);
         KillPlayer.Invoke();
         StartCoroutine(KillCooldown());
@@ -203,6 +203,7 @@ public class HunterAI : MonoBehaviour
         if(timeNotHunting > timeTillHunt)
         {
             StartCoroutine(PreapareChasing());
+            HunterAudioManager.PlayMusic(0);
             minTimeBeforeHunt *= percentReductionToHuntMinMax;
             maxTimeBeforeHunt *= percentReductionToHuntMinMax;
             timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);

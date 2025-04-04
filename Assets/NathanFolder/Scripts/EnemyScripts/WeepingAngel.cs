@@ -115,7 +115,7 @@ public class WeepingAngel : MonoBehaviour
         
         if(currentState == WeepingState.ScareState)
         {
-            AudioManager.PlaySound(1); 
+            WeepingAngelAudioManager.PlaySound(1);
         }
         //go to hide animation and hold position covering face here
         _anim.SetBool("IsRunning", false);
@@ -128,6 +128,7 @@ public class WeepingAngel : MonoBehaviour
     {
         if(lastStateBeforeLookedAt == WeepingState.Murder)
         {
+            WeepingAngelAudioManager.PlayMusic(0);
             currentState = lastStateBeforeLookedAt;
         }else if(lastStateBeforeLookedAt == WeepingState.ScareState)
         {
@@ -136,6 +137,7 @@ public class WeepingAngel : MonoBehaviour
     }
     private void LookedAt()
     {
+        WeepingAngelAudioManager.StopMusic(0);
         freezeMult = 0;
         weepAi.speed = 0;
         _anim.SetBool("IsRunning", false);
@@ -143,11 +145,9 @@ public class WeepingAngel : MonoBehaviour
     IEnumerator DeathProcess()
     {
         StartJumpScare.Invoke();
-        AudioManager.PlaySound(0);
+        WeepingAngelAudioManager.PlaySound(0);
         yield return new WaitForSeconds(1.4f);
-        AudioManager.PlaySound(2);
         yield return new WaitForSeconds(1.19f);
-        AudioManager.PlaySound(3);
         yield return new WaitForSeconds(0.45f);
         KillPlayer.Invoke();
         StartCoroutine(KillCooldown());
@@ -161,7 +161,6 @@ public class WeepingAngel : MonoBehaviour
     private void Murder()
     {
 
-        //play stone scraping sound here
         
         timeInMurder += Time.deltaTime;
         if(timeInMurder > timeBeforeStopMurder)
@@ -216,6 +215,7 @@ public class WeepingAngel : MonoBehaviour
         {
             if(Random.Range(0,1f) < murderProbability)
             {
+                WeepingAngelAudioManager.PlayMusic(0);
                 currentState = WeepingState.Murder;
                 Vector3 furthestSpawnPoint = new Vector3();
                 for(int i = 0; i<murderSpawnPoints.Length; i++)

@@ -30,6 +30,7 @@ public class WandererSightlineScript : MonoBehaviour
         {
             if (isPlayerLookedAt)
             {
+                WandererAudioManager.PlayWalkingSound();
                 PlayerLookedAt.Invoke();
             }
             else

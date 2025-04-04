@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
         float targetSpeed = walkSpeed;
-
+        
         if (sprintAction.IsPressed() && currentStamina > 0 && !isCrouching)
         {
             targetSpeed = sprintSpeed;
@@ -108,6 +108,15 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         if (move.sqrMagnitude > 1) move.Normalize();
+        
+        if (moveAction.WasPressedThisFrame())
+        {
+            PlayerAudioManager.PlayWalkingSound();
+        }
+        else if(moveAction.WasReleasedThisFrame())
+        {
+            PlayerAudioManager.StopWalkingSound();
+        }
 
         controller.Move((transform.right * move.x + transform.forward * move.z + transform.up * -downVel) * targetSpeed * Time.deltaTime);
 

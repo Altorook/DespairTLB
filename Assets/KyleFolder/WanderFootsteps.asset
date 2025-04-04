@@ -47,7 +47,7 @@ AudioRandomContainer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WanderFootsteps
-  m_Volume: -15.8
+  m_Volume: -9.9
   m_Pitch: 0
   m_AutomaticTriggerTime: 0
   m_LoopCount: 1
@@ -62,7 +62,7 @@ AudioRandomContainer:
   - {fileID: -760832199763840105}
   - {fileID: 3696431082334371106}
   m_AvoidRepeatingLast: 0
-  m_PlaybackMode: 2
+  m_PlaybackMode: 0
   m_TriggerMode: 1
   m_AutomaticTriggerMode: 1
   m_LoopMode: 0

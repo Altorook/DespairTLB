@@ -44,6 +44,7 @@ public class WandererEnemy : MonoBehaviour
     {
         StartPos = this.transform.position;
         _anim = GetComponentInChildren<Animator>();
+        StartCoroutine(RandomGruntNoises());
     }
     public void ReturnToStartPosition()
     {
@@ -88,7 +89,8 @@ public class WandererEnemy : MonoBehaviour
         agent.destination = currentPatrolPosition.position;
         if(Vector3.Distance(this.transform.position, currentPatrolPosition.position) <= distanceToSwitchToIdle)
         {
-            isOnWayToPatrolPoint=false;
+            WandererAudioManager.StopWalkingSound();
+            isOnWayToPatrolPoint =false;
             currentState = WandererState.Idle;
             StartCoroutine(RandomIdleDuration());
         }
@@ -115,6 +117,7 @@ public class WandererEnemy : MonoBehaviour
             _anim.SetBool("IsPatrolling", false);
             _anim.SetBool("IsChase", false);
             _anim.SetBool("CanAttack", true);
+            WandererAudioManager.StopWalkingSound();
 
             Debug.Log("UrDEad");
             StartCoroutine(DeathProcess());
@@ -127,6 +130,7 @@ public class WandererEnemy : MonoBehaviour
         yield return new WaitForSeconds(rand);
         if(currentState != WandererState.Chase)
         {
+            WandererAudioManager.PlayWalkingSound();
             currentState = WandererState.Patrol;
         }
     }
@@ -142,11 +146,9 @@ public class WandererEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1.1f);
         StartJumpScare.Invoke();
-        AudioManager.PlaySound(0);
+        WandererAudioManager.PlaySound(3);
         yield return new WaitForSeconds(1.4f);
-        AudioManager.PlaySound(2);
         yield return new WaitForSeconds(1.19f);
-        AudioManager.PlaySound(3);
         yield return new WaitForSeconds(0.45f);
         KillPlayer.Invoke();
         StartCoroutine(KillCooldown());
@@ -171,6 +173,16 @@ public class WandererEnemy : MonoBehaviour
                 Chase();
                 break;
            
+        }
+    }
+    
+    IEnumerator RandomGruntNoises()
+    {
+        yield return new WaitForSeconds(Random.Range(4, 13.1f));
+        if (!isOnKillCooldown)
+        {
+            WandererAudioManager.PlaySound(Random.Range(0, 3));
+            StartCoroutine(RandomGruntNoises());
         }
     }
     // Update is called once per frame
