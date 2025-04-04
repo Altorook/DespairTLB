@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/KyleFolder/MainMenu.unity
     guid: 6ea1e95ead224994cb322291533f6b3e
   - enabled: 1
-    path: Assets/KyleFolder/Kyle Scene.unity
-    guid: 02fb343457c38fc4b8669e32ed7e4ca5
+    path: Assets/NathanFolder/Scenes/SafetyBackUp.unity
+    guid: 263289a0a2192454ab16d811693533c7
+  - enabled: 1
+    path: Assets/KyleFolder/GameOver.unity
+    guid: e5157cf3993fc9241a71dedf2adde292
+  - enabled: 1
+    path: Assets/KyleFolder/GameComplete.unity
+    guid: 46adb589a0e4e7d43b22223685432f36
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

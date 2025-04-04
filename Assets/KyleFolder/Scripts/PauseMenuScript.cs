@@ -18,22 +18,25 @@ public class PauseMenuScript : MonoBehaviour
         {
             PauseGame();
         }
-        
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ResumeGame();
-        }
     }
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         PauseMenuPanel.SetActive(true);
         DisablePlayerControls.Invoke();
     }
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         PauseMenuPanel.SetActive(false);
         EnablePlayerControls.Invoke();
+    }
+     public void QuitGame()
+    {
+        Application.Quit();
     }
 }
