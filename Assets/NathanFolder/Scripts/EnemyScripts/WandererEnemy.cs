@@ -144,13 +144,15 @@ public class WandererEnemy : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
+
         yield return new WaitForSeconds(1.1f);
+        KillPlayer.Invoke();
         StartJumpScare.Invoke();
         WandererAudioManager.PlaySound(3);
         yield return new WaitForSeconds(1.4f);
         yield return new WaitForSeconds(1.19f);
         yield return new WaitForSeconds(0.45f);
-        KillPlayer.Invoke();
+        
         StartCoroutine(KillCooldown());
         // SceneManager.LoadScene("SafetyBackUp");
     }

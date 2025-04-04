@@ -143,12 +143,13 @@ public class HunterAI : MonoBehaviour
     }
     IEnumerator DeathProcess()
     {
+        KillPlayer.Invoke();
         StartJumpScare.Invoke();
         HunterAudioManager.PlaySound(0);    
         yield return new WaitForSeconds(1.4f);
         yield return new WaitForSeconds(1.19f);
         yield return new WaitForSeconds(0.45f);
-        KillPlayer.Invoke();
+    
         StartCoroutine(KillCooldown());
         //SceneManager.LoadScene("SafetyBackUp");
     }
