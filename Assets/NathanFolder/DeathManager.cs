@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DeathManager : MonoBehaviour
@@ -81,7 +82,7 @@ public class DeathManager : MonoBehaviour
         }
         else
         {
-            //end game / out of lives
+            SceneManager.LoadScene("GameOver");
             yield return null;
         }
             

@@ -11,9 +11,13 @@ public class MainMenuScript : MonoBehaviour
     {
         Controls.SetActive(false);
         BackButton.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     public void PlayGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("SafetyBackUp");
     }
     public void ControlsDisplay()
