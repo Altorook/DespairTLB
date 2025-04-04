@@ -46,14 +46,19 @@ public class WandererEnemy : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         StartCoroutine(RandomGruntNoises());
     }
-    public void ReturnToStartPosition()
+    IEnumerator WaitToResetPos()
+    {
+        yield return new WaitForSeconds(4);
+        agent.enabled = false;
+        this.transform.position = StartPos;
+        currentState = WandererState.Idle;
+        agent.enabled = true;
+    }
+        public void ReturnToStartPosition()
     {
         if (this.isActiveAndEnabled)
         {
-            agent.enabled = false;
-            this.transform.position = StartPos;
-            currentState = WandererState.Idle;
-            agent.enabled = true;
+           StartCoroutine(WaitToResetPos());
         }
     }
     public void EnteredAreaTwo()
