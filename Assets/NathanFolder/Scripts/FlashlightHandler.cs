@@ -51,6 +51,10 @@ public class FlashlightHandler : MonoBehaviour
     public void CollectedBattery()
     {
         currentFlashlightCharge += batteryChargeValue;
+        if(currentFlashlightCharge > MaxFlashlightCharge)
+        {
+            currentFlashlightCharge = MaxFlashlightCharge;
+        }
     }
     private void FixedUpdate()
     {

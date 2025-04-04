@@ -71,17 +71,22 @@ public class HunterAI : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         HunterAudioManager.PlayMusic(1);
     }
+    IEnumerator WaitToResetPos()
+    {
+        yield return new WaitForSeconds(4);
+        agent.enabled = false;
+        this.transform.position = StartPos;
+        EnterIdle();
+        timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
+        timeNotHunting = 0;
+
+        agent.enabled = true;
+    }
     public void ReturnToStartPosition()
     {
         if (this.isActiveAndEnabled)
         {
-            agent.enabled = false;
-            this.transform.position = StartPos;
-            EnterIdle();
-            timeTillHunt = Random.Range(minTimeBeforeHunt, maxTimeBeforeHunt);
-            timeNotHunting = 0;
-
-            agent.enabled = true;
+            StartCoroutine(WaitToResetPos());
         }
         
     }

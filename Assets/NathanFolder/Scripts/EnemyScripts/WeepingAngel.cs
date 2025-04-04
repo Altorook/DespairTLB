@@ -63,20 +63,25 @@ public class WeepingAngel : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         StartPos = this.transform.position;
     }
-    public void ReturnToStartPosition()
+    IEnumerator WaitToResetPos()
+    {
+        yield return new WaitForSeconds(4);
+        weepAi.enabled = false;
+        murderProbability = resetProb;
+        maxTimeToChange = resetMaxTime;
+        minTimeToChange = resetMinTime;
+        NewHideState();
+        stateReturnTimer = 0;
+        currentState = WeepingState.HideFromPlayer;
+        timeInMurder = 0;
+        this.transform.position = StartPos;
+        weepAi.enabled = true;
+    }
+        public void ReturnToStartPosition()
     {
         if (this.isActiveAndEnabled)
         {
-            weepAi.enabled = false;
-            murderProbability = resetProb;
-            maxTimeToChange = resetMaxTime;
-            minTimeToChange = resetMinTime;
-            NewHideState();
-            stateReturnTimer = 0;
-            currentState = WeepingState.HideFromPlayer;
-            timeInMurder = 0;
-            this.transform.position = StartPos;
-            weepAi.enabled = true;
+           StartCoroutine(WaitToResetPos());
         }
     }
     void NewHideState()
