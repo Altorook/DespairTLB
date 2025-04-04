@@ -52,7 +52,7 @@ public class DesktopInteraction : MonoBehaviour, IInteractable
         }
     }
 
-    private void ExitComputer()
+    public void ExitComputer()
     {
         isUsingComputer = false;
         mainCamera.gameObject.SetActive(true);

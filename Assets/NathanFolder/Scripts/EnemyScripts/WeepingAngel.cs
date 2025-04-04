@@ -83,6 +83,7 @@ public class WeepingAngel : MonoBehaviour
     {
         timeToChange = Random.Range(minTimeToChange,maxTimeToChange);
         stateReturnTimer = 0;
+        WeepingAngelAudioManager.StopMusic(0);
         this.gameObject.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
         this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
         currentState = WeepingState.HideFromPlayer;
@@ -179,6 +180,7 @@ public class WeepingAngel : MonoBehaviour
         weepAi.destination = playerPos.position;
         if (Vector3.Distance(playerPos.position, this.transform.position) <= killDistance && !status.isVented && !isOnKillCooldown){
             Debug.Log("UrDEad");
+            WeepingAngelAudioManager.StopMusic(0);
             NewHideState();
             StartCoroutine(DeathProcess());
             isOnKillCooldown = true;

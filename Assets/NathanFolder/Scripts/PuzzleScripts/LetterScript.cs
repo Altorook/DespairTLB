@@ -27,16 +27,20 @@ public class LetterScript : MonoBehaviour,IInteractable
 
         }
     }
+    public void CloseCard()
+    {
+        letterCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        UIOpen.Invoke();
+        isOpen = false;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen)
         {
-            letterCanvas.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            UIOpen.Invoke();
-            isOpen = false;
+            CloseCard();
         }
     }
 }
